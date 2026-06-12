@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { useInView, animate } from "framer-motion";
 
@@ -9,7 +11,7 @@ interface AnimatedCounterProps {
 
 export function AnimatedCounter({ value, suffix = "", prefix = "" }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (isInView && ref.current) {
