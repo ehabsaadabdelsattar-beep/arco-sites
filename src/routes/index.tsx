@@ -14,6 +14,13 @@ export const Route = createFileRoute("/")({
 
 const featuredProjects = projects.slice(0, 3);
 
+const getDynamicProjectsCount = () => {
+  const startDate = new Date("2026-06-13").getTime();
+  const currentDate = new Date().getTime();
+  const weeksPassed = Math.max(0, Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24 * 7)));
+  return 25 + weeksPassed;
+};
+
 function HomePage() {
   return (
     <div className="bg-[#000000] text-white selection:bg-white selection:text-black">
@@ -158,7 +165,7 @@ function HomePage() {
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex flex-col gap-4 border-t border-[#222] pt-8">
               <span className="text-6xl font-bold tracking-tighter text-white sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-                <AnimatedCounter value={25} suffix="+" />
+                <AnimatedCounter value={getDynamicProjectsCount()} suffix="+" />
               </span>
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Projects Delivered</span>
             </div>

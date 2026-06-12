@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { useInView, useMotionValue, useSpring, useMotionValueEvent } from "framer-motion";
 
 interface AnimatedCounterProps {
   value: number;
@@ -23,13 +23,11 @@ export function AnimatedCounter({ value, suffix = "", prefix = "" }: AnimatedCou
     }
   }, [isInView, value, motionValue]);
 
-  useEffect(() => {
-    springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US").format(Math.floor(latest));
-      }
-    });
-  }, [springValue]);
+  useMotionValueEvent(springValue, "change", (latest) => {
+    if (ref.current) {
+      ref.current.textContent = Intl.NumberFormat("en-US").format(Math.floor(latest));
+    }
+  });
 
   return (
     <span className="inline-flex">
