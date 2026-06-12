@@ -130,7 +130,6 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 import { Preloader } from "../components/Preloader";
-import { CustomCursor } from "../components/CustomCursor";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -139,7 +138,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Preloader />
-      <CustomCursor />
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">
