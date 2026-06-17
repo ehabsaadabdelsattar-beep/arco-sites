@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <clipPath id="window">
+      <rect x="0" y="0" width="1200" height="800" rx="12" />
+    </clipPath>
+  </defs>
+  
+  <g clip-path="url(#window)">
+    <!-- Browser Bar -->
+    <rect x="0" y="0" width="1200" height="40" fill="#f1f5f9" />
+    <circle cx="20" cy="20" r="6" fill="#ff5f56" />
+    <circle cx="40" cy="20" r="6" fill="#ffbd2e" />
+    <circle cx="60" cy="20" r="6" fill="#27c93f" />
+    
+    <!-- Hero Background -->
+    <image href="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&auto=format&fit=crop" x="0" y="40" width="1200" height="760" preserveAspectRatio="xMidYMid slice" />
+    
+    <!-- Dark Overlay -->
+    <rect x="0" y="40" width="1200" height="760" fill="#000000" opacity="0.6" />
+    
+    <!-- Header -->
+    <rect x="0" y="40" width="1200" height="80" fill="transparent" />
+    <text x="60" y="90" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#ffffff" letter-spacing="2">CARE MEDICAL CENTER</text>
+    <text x="900" y="90" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" font-weight="bold">HOME</text>
+    <text x="980" y="90" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">SERVICES</text>
+    <text x="1080" y="90" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">CONTACT</text>
+    
+    <!-- Hero Text Content -->
+    <text x="600" y="400" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">Care Medical Center</text>
+    <text x="600" y="460" font-family="Arial, sans-serif" font-size="20" fill="#e2e8f0" text-anchor="middle" letter-spacing="2">EXPERIENCE EXCELLENCE &amp; QUALITY</text>
+    
+    <!-- CTA Button -->
+    <rect x="500" y="520" width="200" height="50" rx="4" fill="#6366f1" />
+    <text x="600" y="552" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">DISCOVER MORE</text>
+  </g>
+</svg>

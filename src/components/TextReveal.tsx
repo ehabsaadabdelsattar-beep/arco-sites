@@ -11,8 +11,8 @@ export function TextReveal({ text }: { text: string }) {
   const words = text.split(" ");
 
   return (
-    <p 
-      ref={container} 
+    <p
+      ref={container}
       className="flex flex-wrap text-4xl font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
       style={{ fontFamily: "var(--font-display)" }}
     >
@@ -25,7 +25,9 @@ export function TextReveal({ text }: { text: string }) {
 
         return (
           <span key={i} className="mr-[2vw] relative inline-block">
-            <motion.span style={{ opacity, y }} className="inline-block">{word}</motion.span>
+            <motion.span style={{ opacity, y }} className="inline-block">
+              {word}
+            </motion.span>
           </span>
         );
       })}

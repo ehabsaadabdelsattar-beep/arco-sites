@@ -5,7 +5,11 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Pricing — Arco Sites" },
-      { name: "description", content: "Transparent pricing for professional web development services. Choose the right plan for your business." },
+      {
+        name: "description",
+        content:
+          "Transparent pricing for professional web development services. Choose the right plan for your business.",
+      },
     ],
   }),
   component: PricingPage,
@@ -31,7 +35,8 @@ const pricingPlans = [
   },
   {
     name: "Corporate Website",
-    description: "Ideal for growing businesses that need a professional, multi-page online presence.",
+    description:
+      "Ideal for growing businesses that need a professional, multi-page online presence.",
     price: "Starting at $2,499",
     features: [
       { name: "Up to 10 Pages", included: true },
@@ -71,11 +76,15 @@ function PricingPage() {
       {/* Header */}
       <section className="bg-muted/30 px-4 py-20 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl" style={{ fontFamily: "var(--font-display)" }}>
+          <h1
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Transparent Pricing
           </h1>
           <p className="mx-auto mt-6 text-lg text-muted-foreground">
-            No hidden fees. We provide clear, upfront pricing based on your project's scope and requirements. Every project is unique, so these prices serve as a starting point.
+            No hidden fees. We provide clear, upfront pricing based on your project's scope and
+            requirements. Every project is unique, so these prices serve as a starting point.
           </p>
         </div>
       </section>
@@ -87,7 +96,9 @@ function PricingPage() {
             <div
               key={i}
               className={`relative flex flex-col rounded-3xl border ${
-                plan.popular ? "border-primary bg-card shadow-xl shadow-primary/10" : "border-border/40 bg-card/50"
+                plan.popular
+                  ? "border-primary bg-card shadow-xl shadow-primary/10"
+                  : "border-border/40 bg-card/50"
               } p-8`}
             >
               {plan.popular && (
@@ -95,23 +106,24 @@ function PricingPage() {
                   Most Popular
                 </div>
               )}
-              
+
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+                <h3
+                  className="text-2xl font-bold text-foreground"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   {plan.name}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground min-h-[40px]">
                   {plan.description}
                 </p>
               </div>
-              
+
               <div className="mb-8 border-b border-border/40 pb-8">
-                <div className="text-3xl font-bold text-foreground">
-                  {plan.price}
-                </div>
+                <div className="text-3xl font-bold text-foreground">{plan.price}</div>
                 <div className="mt-1 text-sm text-muted-foreground">Custom quote required</div>
               </div>
-              
+
               <ul className="mb-8 flex-1 space-y-4">
                 {plan.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-3">
@@ -120,13 +132,15 @@ function PricingPage() {
                     ) : (
                       <X className="h-5 w-5 shrink-0 text-muted-foreground/40" />
                     )}
-                    <span className={`text-sm ${feature.included ? "text-foreground" : "text-muted-foreground/60"}`}>
+                    <span
+                      className={`text-sm ${feature.included ? "text-foreground" : "text-muted-foreground/60"}`}
+                    >
                       {feature.name}
                     </span>
                   </li>
                 ))}
               </ul>
-              
+
               <Link
                 to="/contact"
                 className={`inline-flex w-full items-center justify-center rounded-xl px-6 py-4 text-sm font-semibold transition-colors ${
@@ -145,11 +159,15 @@ function PricingPage() {
       {/* FAQ / Support Info */}
       <section className="border-t border-border/40 bg-card/30 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
+          <h2
+            className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Need a Custom Solution?
           </h2>
           <p className="mt-4 text-muted-foreground">
-            If your project requires complex web applications, custom databases, or specialized API integrations, we offer custom development services tailored specifically to your needs.
+            If your project requires complex web applications, custom databases, or specialized API
+            integrations, we offer custom development services tailored specifically to your needs.
           </p>
           <div className="mt-8">
             <Link

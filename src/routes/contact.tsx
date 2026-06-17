@@ -6,9 +6,17 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact — Arco Sites" },
-      { name: "description", content: "Get in touch with Arco Sites to discuss your next web project. Free consultation available." },
+      {
+        name: "description",
+        content:
+          "Get in touch with Arco Sites to discuss your next web project. Free consultation available.",
+      },
       { property: "og:title", content: "Contact — Arco Sites" },
-      { property: "og:description", content: "Get in touch with Arco Sites to discuss your next web project. Free consultation available." },
+      {
+        property: "og:description",
+        content:
+          "Get in touch with Arco Sites to discuss your next web project. Free consultation available.",
+      },
     ],
   }),
   component: ContactPage,
@@ -46,11 +54,15 @@ function ContactPage() {
           <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
             <CheckCircle className="h-8 w-8" />
           </div>
-          <h2 className="mt-6 text-2xl font-bold tracking-tight text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+          <h2
+            className="mt-6 text-2xl font-bold tracking-tight text-foreground"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             Message Sent!
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Thank you for reaching out. We'll review your inquiry and get back to you within 24 hours.
+            Thank you for reaching out. We'll review your inquiry and get back to you within 24
+            hours.
           </p>
         </div>
       </section>
@@ -61,11 +73,15 @@ function ContactPage() {
     <div className="flex flex-col">
       {/* Hero */}
       <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+        <h1
+          className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
           Get in Touch
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Ready to start your project? Fill out the form below and we'll get back to you with a free consultation.
+          Ready to start your project? Fill out the form below and we'll get back to you with a free
+          consultation.
         </p>
       </section>
 
@@ -73,7 +89,10 @@ function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-5">
           {/* Form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="rounded-2xl border border-border/40 bg-card/30 p-6 sm:p-8">
+            <form
+              onSubmit={handleSubmit}
+              className="rounded-2xl border border-border/40 bg-card/30 p-6 sm:p-8"
+            >
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground">
@@ -161,11 +180,18 @@ function ContactPage() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground" style={{ fontFamily: "var(--font-display)" }}>
-                    Email Us
+                  <h3
+                    className="font-semibold text-foreground"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Contact Info
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    hello@arcosites.com
+                    Beni Suef, Egypt
+                    <br />
+                    +20 102 629 6556
+                    <br />
+                    arcosites@gmail.com
                   </p>
                 </div>
               </div>
@@ -175,7 +201,10 @@ function ContactPage() {
                   <MessageSquare className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3
+                    className="font-semibold text-foreground"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
                     Free Consultation
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
@@ -189,7 +218,10 @@ function ContactPage() {
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3
+                    className="font-semibold text-foreground"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
                     Response Time
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">

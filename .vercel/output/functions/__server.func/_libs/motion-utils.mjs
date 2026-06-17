@@ -66,6 +66,10 @@ class SubscriptionManager {
 const secondsToMilliseconds = /* @__NO_SIDE_EFFECTS__ */ (seconds) => seconds * 1e3;
 const millisecondsToSeconds = /* @__NO_SIDE_EFFECTS__ */ (milliseconds) => milliseconds / 1e3;
 const velocityPerSecond = /* @__NO_SIDE_EFFECTS__ */ (velocity, frameDuration) => frameDuration ? velocity * (1e3 / frameDuration) : 0;
+const wrap = (min, max, v) => {
+  const rangeSize = max - min;
+  return ((v - min) % rangeSize + rangeSize) % rangeSize + min;
+};
 const calcBezier = (t, a1, a2) => (((1 - 3 * a2 + 3 * a1) * t + (3 * a2 - 6 * a1)) * t + 3 * a1) * t;
 const subdivisionPrecision = 1e-7;
 const subdivisionMaxIterations = 12;
@@ -106,6 +110,10 @@ const easeInOut = /* @__PURE__ */ cubicBezier(0.42, 0, 0.58, 1);
 const isEasingArray = /* @__NO_SIDE_EFFECTS__ */ (ease) => {
   return Array.isArray(ease) && typeof ease[0] !== "number";
 };
+// @__NO_SIDE_EFFECTS__
+function getEasingForSegment(easing, i) {
+  return /* @__PURE__ */ isEasingArray(easing) ? easing[wrap(0, easing.length, i)] : easing;
+}
 const isBezierDefinition = /* @__NO_SIDE_EFFECTS__ */ (easing) => Array.isArray(easing) && typeof easing[0] === "number";
 const easingLookup = {
   linear: noop,
@@ -137,25 +145,27 @@ export {
   MotionGlobalConfig as M,
   SubscriptionManager as S,
   progress as a,
-  isEasingArray as b,
+  reverseEasing as b,
   clamp as c,
-  easeInOut as d,
+  isEasingArray as d,
   easingDefinitionToFunction as e,
-  memo as f,
-  isBezierDefinition as g,
-  circInOut as h,
+  easeInOut as f,
+  getEasingForSegment as g,
+  memo as h,
   invariant as i,
-  backInOut as j,
-  anticipate as k,
-  isNumericalString as l,
+  isBezierDefinition as j,
+  circInOut as k,
+  backInOut as l,
   millisecondsToSeconds as m,
   noop as n,
-  isZeroValueString as o,
+  anticipate as o,
   pipe as p,
-  isObject as q,
-  circOut as r,
+  isNumericalString as q,
+  removeItem as r,
   secondsToMilliseconds as s,
-  addUniqueItem as t,
-  removeItem as u,
-  velocityPerSecond as v
+  isZeroValueString as t,
+  isObject as u,
+  velocityPerSecond as v,
+  circOut as w,
+  addUniqueItem as x
 };

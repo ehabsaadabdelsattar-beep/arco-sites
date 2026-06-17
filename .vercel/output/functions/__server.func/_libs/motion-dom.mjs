@@ -1,4 +1,4 @@
-import { M as MotionGlobalConfig, n as noop, c as clamp, p as pipe, m as millisecondsToSeconds, s as secondsToMilliseconds, v as velocityPerSecond, i as invariant, a as progress, b as isEasingArray, e as easingDefinitionToFunction, d as easeInOut, f as memo, g as isBezierDefinition, h as circInOut, j as backInOut, k as anticipate, S as SubscriptionManager, l as isNumericalString, o as isZeroValueString, q as isObject, r as circOut, t as addUniqueItem, u as removeItem } from "./motion-utils.mjs";
+import { M as MotionGlobalConfig, n as noop, c as clamp, p as pipe, m as millisecondsToSeconds, s as secondsToMilliseconds, v as velocityPerSecond, i as invariant, a as progress, d as isEasingArray, e as easingDefinitionToFunction, f as easeInOut, h as memo, j as isBezierDefinition, k as circInOut, l as backInOut, o as anticipate, S as SubscriptionManager, q as isNumericalString, t as isZeroValueString, u as isObject, w as circOut, x as addUniqueItem, r as removeItem } from "./motion-utils.mjs";
 const stepsOrder = [
   "setup",
   // Compute
@@ -2043,6 +2043,90 @@ class AsyncMotionValueAnimation extends WithPromise {
     this.keyframeResolver?.cancel();
   }
 }
+class GroupAnimation {
+  constructor(animations) {
+    this.stop = () => this.runAll("stop");
+    this.animations = animations.filter(Boolean);
+  }
+  get finished() {
+    return Promise.all(this.animations.map((animation) => animation.finished));
+  }
+  /**
+   * TODO: Filter out cancelled or stopped animations before returning
+   */
+  getAll(propName) {
+    return this.animations[0][propName];
+  }
+  setAll(propName, newValue) {
+    for (let i = 0; i < this.animations.length; i++) {
+      this.animations[i][propName] = newValue;
+    }
+  }
+  attachTimeline(timeline) {
+    const subscriptions = this.animations.map((animation) => animation.attachTimeline(timeline));
+    return () => {
+      subscriptions.forEach((cancel, i) => {
+        cancel && cancel();
+        this.animations[i].stop();
+      });
+    };
+  }
+  get time() {
+    return this.getAll("time");
+  }
+  set time(time2) {
+    this.setAll("time", time2);
+  }
+  get speed() {
+    return this.getAll("speed");
+  }
+  set speed(speed) {
+    this.setAll("speed", speed);
+  }
+  get state() {
+    return this.getAll("state");
+  }
+  get startTime() {
+    return this.getAll("startTime");
+  }
+  get duration() {
+    return getMax(this.animations, "duration");
+  }
+  get iterationDuration() {
+    return getMax(this.animations, "iterationDuration");
+  }
+  runAll(methodName) {
+    this.animations.forEach((controls) => controls[methodName]());
+  }
+  play() {
+    this.runAll("play");
+  }
+  pause() {
+    this.runAll("pause");
+  }
+  cancel() {
+    this.runAll("cancel");
+  }
+  complete() {
+    this.runAll("complete");
+  }
+}
+function getMax(animations, propName) {
+  let max = 0;
+  for (let i = 0; i < animations.length; i++) {
+    const value = animations[i][propName];
+    if (value !== null && value > max) {
+      max = value;
+    }
+  }
+  return max;
+}
+class GroupAnimationWithThen extends GroupAnimation {
+  then(onResolve, _onReject) {
+    return this.finished.finally(onResolve).then(() => {
+    });
+  }
+}
 function calcChildStagger(children, child, delayChildren, staggerChildren = 0, staggerDirection = 1) {
   const index = Array.from(children).sort((a, b) => a.sortNodePosition(b)).indexOf(child);
   const numChildren = children.size;
@@ -2955,6 +3039,9 @@ function resolveElements(elementOrSelector, scope, selectorCache) {
     return [elementOrSelector];
   } else if (typeof elementOrSelector === "string") {
     let root = document;
+    if (scope) {
+      root = scope.current;
+    }
     const elements = selectorCache?.[elementOrSelector] ?? root.querySelectorAll(elementOrSelector);
     return elements ? Array.from(elements) : [];
   }
@@ -4191,6 +4278,42 @@ class HTMLVisualElement extends DOMVisualElement {
   }
   scrapeMotionValuesFromProps(props, prevProps, visualElement) {
     return scrapeMotionValuesFromProps$1(props, prevProps, visualElement);
+  }
+}
+function isObjectKey(key, object) {
+  return key in object;
+}
+class ObjectVisualElement extends VisualElement {
+  constructor() {
+    super(...arguments);
+    this.type = "object";
+  }
+  readValueFromInstance(instance, key) {
+    if (isObjectKey(key, instance)) {
+      const value = instance[key];
+      if (typeof value === "string" || typeof value === "number") {
+        return value;
+      }
+    }
+    return void 0;
+  }
+  getBaseTargetFromProps() {
+    return void 0;
+  }
+  removeValueFromRenderState(key, renderState) {
+    delete renderState.output[key];
+  }
+  measureInstanceViewportBox() {
+    return createBox();
+  }
+  build(renderState, latestValues) {
+    Object.assign(renderState.output, latestValues);
+  }
+  renderInstance(instance, { output }) {
+    Object.assign(instance, output);
+  }
+  sortInstanceNodePosition() {
+    return 0;
   }
 }
 const dashKeys = {
@@ -6068,6 +6191,17 @@ export {
   isMotionValue as a,
   attachFollow as a0,
   resolveElements as a1,
+  createGeneratorEasing as a2,
+  fillOffset as a3,
+  isGenerator as a4,
+  isSVGElement as a5,
+  isSVGSVGElement as a6,
+  visualElementStore as a7,
+  ObjectVisualElement as a8,
+  animateSingleValue as a9,
+  animateTarget as aa,
+  spring as ab,
+  GroupAnimationWithThen as ac,
   isControllingVariants as b,
   isVariantLabel as c,
   isForcedMotionValue as d,

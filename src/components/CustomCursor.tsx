@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
-  
+
   // Track center of cursor, but we'll offset by size/2 in the style
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -21,10 +21,10 @@ export function CustomCursor() {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (
-        target.tagName.toLowerCase() === 'button' || 
-        target.tagName.toLowerCase() === 'a' || 
-        target.closest('button') || 
-        target.closest('a')
+        target.tagName.toLowerCase() === "button" ||
+        target.tagName.toLowerCase() === "a" ||
+        target.closest("button") ||
+        target.closest("a")
       ) {
         setIsHovering(true);
       } else {
@@ -38,12 +38,12 @@ export function CustomCursor() {
     // Hide default cursor
     document.body.style.cursor = "none";
     const hideCursors = () => {
-      document.querySelectorAll("a, button").forEach(el => {
+      document.querySelectorAll("a, button").forEach((el) => {
         (el as HTMLElement).style.cursor = "none";
       });
     };
     hideCursors();
-    
+
     // We should technically observe DOM mutations, but this is a simplified approach
     // For a real app, you might want to use a MutationObserver.
 

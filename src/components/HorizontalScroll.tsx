@@ -7,7 +7,7 @@ export function HorizontalScroll({ children }: { children: ReactNode }) {
     target: targetRef,
   });
 
-  // Maps scroll progress to an x-translation. 
+  // Maps scroll progress to an x-translation.
   // We translate leftwards by subtracting a percentage.
   // The exact percentage might need to be tweaked depending on the number of cards.
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);

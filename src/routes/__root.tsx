@@ -81,15 +81,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Arco Sites — Professional Website Design & Development" },
-      { name: "description", content: "Arco Sites creates modern, high-performance websites that help businesses build trust, strengthen their online presence, and convert visitors into customers." },
+      {
+        name: "description",
+        content:
+          "Arco Sites creates modern, high-performance websites that help businesses build trust, strengthen their online presence, and convert visitors into customers.",
+      },
       { name: "author", content: "Arco Sites" },
       { property: "og:title", content: "Arco Sites — Professional Website Design & Development" },
-      { property: "og:description", content: "Modern, high-performance websites that help businesses build trust and convert visitors into customers." },
+      {
+        property: "og:description",
+        content:
+          "Modern, high-performance websites that help businesses build trust and convert visitors into customers.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@arcosites" },
     ],
     links: [
+      {
+        rel: "icon",
+        href: "/arco-icon.png",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -105,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
       },
     ],
   }),
@@ -119,6 +131,12 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/* Flash-prevention: set theme class before any CSS loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('arco-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>

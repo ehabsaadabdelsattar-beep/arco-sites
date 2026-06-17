@@ -7,9 +7,17 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Us — Arco Sites" },
-      { name: "description", content: "Learn about Arco Sites' mission, vision, and commitment to delivering professional web solutions." },
+      {
+        name: "description",
+        content:
+          "Learn about Arco Sites' mission, vision, and commitment to delivering professional web solutions.",
+      },
       { property: "og:title", content: "About Us — Arco Sites" },
-      { property: "og:description", content: "Learn about Arco Sites' mission, vision, and commitment to delivering professional web solutions." },
+      {
+        property: "og:description",
+        content:
+          "Learn about Arco Sites' mission, vision, and commitment to delivering professional web solutions.",
+      },
     ],
   }),
   component: AboutPage,
@@ -29,29 +37,43 @@ function AboutPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+          <h1
+            className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
             About Arco Sites
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            We transform ideas into professional digital experiences that leave a lasting impression.
+            We transform ideas into professional digital experiences that leave a lasting
+            impression.
           </p>
         </div>
       </section>
 
       {/* Story */}
       <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
+        <h2
+          className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
           Who We Are
         </h2>
         <div className="mt-6 space-y-6 text-base leading-relaxed text-muted-foreground">
           <p>
-            At Arco Sites, we create modern, high-performance websites that help businesses build trust, strengthen their online presence, and convert visitors into customers.
+            At Arco Sites, we create modern, high-performance websites that help businesses build
+            trust, strengthen their online presence, and convert visitors into customers.
           </p>
           <p>
-            We specialize in designing and developing fast, responsive, and user-friendly websites tailored to the unique needs of each client. Whether you need a hotel website, a business website, a landing page, or a complete digital presence, we focus on delivering clean design, excellent performance, and a seamless user experience across all devices.
+            We specialize in designing and developing fast, responsive, and user-friendly websites
+            tailored to the unique needs of each client. Whether you need a hotel website, a
+            business website, a landing page, or a complete digital presence, we focus on delivering
+            clean design, excellent performance, and a seamless user experience across all devices.
           </p>
           <p>
-            Our approach combines modern technologies, intuitive design, and attention to detail to ensure that every website is visually appealing, easy to navigate, and optimized for growth. We believe that a website should be more than just an online brochure—it should be a powerful tool that supports your business goals and enhances your brand image.
+            Our approach combines modern technologies, intuitive design, and attention to detail to
+            ensure that every website is visually appealing, easy to navigate, and optimized for
+            growth. We believe that a website should be more than just an online brochure—it should
+            be a powerful tool that supports your business goals and enhances your brand image.
           </p>
         </div>
       </section>
@@ -64,22 +86,31 @@ function AboutPage() {
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Target className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-2xl font-bold tracking-tight text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+              <h3
+                className="mt-5 text-2xl font-bold tracking-tight text-foreground"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 Our Mission
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Our mission is to help businesses establish a strong digital presence through professional websites that inspire confidence, attract customers, and support long-term success.
+                Our mission is to help businesses establish a strong digital presence through
+                professional websites that inspire confidence, attract customers, and support
+                long-term success.
               </p>
             </div>
             <div className="rounded-2xl border border-border/40 bg-card/30 p-8 lg:p-10">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Eye className="h-6 w-6" />
               </div>
-              <h3 className="mt-5 text-2xl font-bold tracking-tight text-foreground" style={{ fontFamily: "var(--font-display)" }}>
+              <h3
+                className="mt-5 text-2xl font-bold tracking-tight text-foreground"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 Our Vision
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                To become a trusted partner for businesses seeking innovative, high-quality web solutions that combine design excellence with modern technology.
+                To become a trusted partner for businesses seeking innovative, high-quality web
+                solutions that combine design excellence with modern technology.
               </p>
             </div>
           </div>
@@ -88,7 +119,10 @@ function AboutPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
+        <h2
+          className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
           Let's Work Together
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">

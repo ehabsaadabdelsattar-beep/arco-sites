@@ -1,7 +1,13 @@
 import { motion, useSpring, useMotionValue } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
-export function Magnetic({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function Magnetic({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -16,7 +22,7 @@ export function Magnetic({ children, className = "" }: { children: ReactNode; cl
     const { left, top, width, height } = ref.current.getBoundingClientRect();
     const centerX = left + width / 2;
     const centerY = top + height / 2;
-    
+
     // Move element slightly towards the mouse
     x.set((clientX - centerX) * 0.3);
     y.set((clientY - centerY) * 0.3);

@@ -22,7 +22,7 @@ export function AnimatedCounter({ value, suffix = "", prefix = "" }: AnimatedCou
           if (ref.current) {
             ref.current.textContent = Intl.NumberFormat("en-US").format(Math.floor(latest));
           }
-        }
+        },
       });
       return () => controls.stop();
     }

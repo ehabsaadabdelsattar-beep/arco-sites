@@ -1,9 +1,17 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { CSSProperties, ReactNode, useRef } from "react";
 
-export function TiltCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function TiltCard({
+  children,
+  className = "",
+  style,
+}: {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}) {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -15,18 +23,9 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
-    
     const rect = ref.current.getBoundingClientRect();
-    
-    const width = rect.width;
-    const height = rect.height;
-    
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    
+    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
+    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
     x.set(xPct);
     y.set(yPct);
   };
@@ -45,6 +44,7 @@ export function TiltCard({ children, className = "" }: { children: ReactNode; cl
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        ...style,
       }}
       className={`relative ${className}`}
     >
