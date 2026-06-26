@@ -1,42 +1,48 @@
 export interface Project {
   id: string;
   title: string;
+  title_ar?: string;
   projectType: "redesign" | "new";
   showcaseTheme?: "hotel" | "coastal" | "boutique" | "realestate";
   showcaseVariant?: "laptop" | "imac";
   category: string;
+  category_ar?: string;
   year: string;
   heroImage: string;
   overview: string;
+  overview_ar?: string;
   clientGoals: string[];
+  clientGoals_ar?: string[];
   designProcess: string;
   challenges: string;
   technologies: string[];
   mockupDesktop: string;
   mockupMobile: string;
   results: string[];
+  results_ar?: string[];
   gallery: string[];
-  // Case Study Fields
   oldUrl?: string;
   newUrl: string;
   oldScreenshot?: string;
   newScreenshot?: string;
   keyImprovements: string[];
+  keyImprovements_ar?: string[];
 }
 
 export const projects: Project[] = [
   {
     id: "park-regency-hotel",
     title: "Park Regency Hotel",
+    title_ar: "فندق بارك ريجنسي",
     projectType: "new",
     showcaseTheme: "hotel" as const,
     showcaseVariant: "imac" as const,
     category: "Hotel Website Redesign",
+    category_ar: "إعادة تصميم موقع فندق",
     year: "2025",
-    heroImage:
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2500&auto=format&fit=crop",
-    overview:
-      "A complete luxury redesign of the Park Regency Hotel's digital presence. The existing site was outdated, slow, and failing to convert visitors into guests. The new website was engineered to reflect the hotel's five-star standards — elegant, authoritative, and immersive — while delivering a seamless booking experience across all devices.",
+    heroImage: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2500&auto=format&fit=crop",
+    overview: "A complete luxury redesign of the Park Regency Hotel's digital presence. The existing site was outdated, slow, and failing to convert visitors into guests. The new website was engineered to reflect the hotel's five-star standards — elegant, authoritative, and immersive — while delivering a seamless booking experience across all devices.",
+    overview_ar: "إعادة تصميم فاخرة وكاملة للحضور الرقمي لفندق بارك ريجنسي. كان الموقع القديم بطيئاً وعفا عليه الزمن، ويفشل في تحويل الزوار إلى نزلاء. تم تصميم الموقع الجديد ليعكس معايير الخمس نجوم للفندق - أنيق، موثوق، وغامر - مع تقديم تجربة حجز سلسة عبر جميع الأجهزة.",
     clientGoals: [
       "Improve visual quality",
       "Modernize user experience",
@@ -44,19 +50,29 @@ export const projects: Project[] = [
       "Mobile-first optimization",
       "Better booking journey",
     ],
-    designProcess:
-      "We approached the design with a 'minimalist luxury' philosophy — rich photography paired with ample white space, refined serif typography, and understated gold accents. Every section was crafted to feel like a high-end editorial spread, guiding the visitor from inspiration to booking with minimal friction.",
-    challenges:
-      "The primary design challenge was balancing visual richness with performance. Large, cinematic imagery needed to load instantly without compromising the premium feel. We implemented progressive image loading, lazy rendering, and a lightweight CSS animation layer to keep every interaction at 60fps.",
+    clientGoals_ar: [
+      "تحسين الجودة المرئية",
+      "تحديث تجربة المستخدم",
+      "زيادة الثقة والمصداقية",
+      "تحسين التوافق مع الهواتف أولاً",
+      "رحلة حجز أفضل",
+    ],
+    designProcess: "We approached the design with a 'minimalist luxury' philosophy — rich photography paired with ample white space, refined serif typography, and understated gold accents. Every section was crafted to feel like a high-end editorial spread, guiding the visitor from inspiration to booking with minimal friction.",
+    challenges: "The primary design challenge was balancing visual richness with performance. Large, cinematic imagery needed to load instantly without compromising the premium feel. We implemented progressive image loading, lazy rendering, and a lightweight CSS animation layer to keep every interaction at 60fps.",
     technologies: ["React", "Framer Motion", "Vite", "Vanilla CSS", "Cloudinary"],
     mockupDesktop: "/projects_ui/park-regency-upload.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1551882547-ff40c0d5bf8f?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1551882547-ff40c0d5bf8f?q=80&w=800&auto=format&fit=crop",
     results: [
       "Cleaner user experience",
       "Stronger visual identity",
       "Better mobile usability",
       "Modern hotel presentation",
+    ],
+    results_ar: [
+      "تجربة مستخدم أنظف",
+      "هوية بصرية أقوى",
+      "سهولة استخدام أفضل على الهاتف",
+      "عرض فندقي عصري",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1800&auto=format&fit=crop",
@@ -75,19 +91,28 @@ export const projects: Project[] = [
       "Faster Performance",
       "Premium Visual Experience",
     ],
+    keyImprovements_ar: [
+      "تصميم واجهة مستخدم عصري",
+      "تخطيط متجاوب بالكامل",
+      "تحسين جودة الخطوط والنصوص",
+      "بنية معلومات أفضل",
+      "أداء أسرع",
+      "تجربة بصرية فاخرة",
+    ],
   },
   {
     id: "naama-blue-hotel",
     title: "Naama Blue Hotel",
+    title_ar: "فندق نعمة بلو",
     projectType: "new",
     showcaseTheme: "coastal" as const,
     showcaseVariant: "laptop" as const,
     category: "Hotel Website Redesign",
+    category_ar: "إعادة تصميم موقع فندق",
     year: "2025",
-    heroImage:
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2500&auto=format&fit=crop",
-    overview:
-      "A full modernization of the Naama Blue Hotel's online presence in Sharm El-Sheikh. The previous website had a fragmented visual hierarchy and a confusing navigation structure that was damaging guest trust. We rebuilt it from the ground up with a clean, booking-focused architecture designed to convert browsers into confident guests.",
+    heroImage: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2500&auto=format&fit=crop",
+    overview: "A full modernization of the Naama Blue Hotel's online presence in Sharm El-Sheikh. The previous website had a fragmented visual hierarchy and a confusing navigation structure that was damaging guest trust. We rebuilt it from the ground up with a clean, booking-focused architecture designed to convert browsers into confident guests.",
+    overview_ar: "تحديث كامل للحضور الرقمي لفندق نعمة بلو في شرم الشيخ. كان للموقع القديم تسلسل مرئي مشتت وبنية تنقل مربكة كانت تضر بثقة الضيوف. قمنا بإعادة بنائه من الصفر بهندسة نظيفة تركز على الحجز، مصممة لتحويل المتصفحين إلى ضيوف واثقين.",
     clientGoals: [
       "Improve visual quality",
       "Modernize user experience",
@@ -95,19 +120,29 @@ export const projects: Project[] = [
       "Mobile-first optimization",
       "Better booking journey",
     ],
-    designProcess:
-      "We studied the hotel's brand identity and translated it into a clean digital language. A calm, coastal color palette — deep ocean blues and crisp whites — established instant trust. Navigation was radically simplified: every page has one primary action, guiding visitors toward a booking decision without distraction.",
-    challenges:
-      "The hotel's existing content was scattered across multiple outdated pages with inconsistent imagery and messaging. We audited and restructured all content, developed a new photography-led visual hierarchy, and enforced a mobile-first breakpoint strategy to ensure flawless rendering on smaller screens.",
+    clientGoals_ar: [
+      "تحسين الجودة المرئية",
+      "تحديث تجربة المستخدم",
+      "زيادة الثقة والمصداقية",
+      "تحسين التوافق مع الهواتف أولاً",
+      "رحلة حجز أفضل",
+    ],
+    designProcess: "We studied the hotel's brand identity and translated it into a clean digital language. A calm, coastal color palette — deep ocean blues and crisp whites — established instant trust. Navigation was radically simplified: every page has one primary action, guiding visitors toward a booking decision without distraction.",
+    challenges: "The hotel's existing content was scattered across multiple outdated pages with inconsistent imagery and messaging. We audited and restructured all content, developed a new photography-led visual hierarchy, and enforced a mobile-first breakpoint strategy to ensure flawless rendering on smaller screens.",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Performance Optimization"],
     mockupDesktop: "/projects_ui/naama-blue-upload.jpg",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop",
     results: [
       "Cleaner user experience",
       "Stronger visual identity",
       "Better mobile usability",
       "Modern hotel presentation",
+    ],
+    results_ar: [
+      "تجربة مستخدم أنظف",
+      "هوية بصرية أقوى",
+      "سهولة استخدام أفضل على الهاتف",
+      "عرض فندقي عصري",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=1800&auto=format&fit=crop",
@@ -126,35 +161,52 @@ export const projects: Project[] = [
       "Faster Performance",
       "Premium Visual Experience",
     ],
+    keyImprovements_ar: [
+      "تصميم واجهة مستخدم عصري",
+      "تخطيط متجاوب بالكامل",
+      "تحسين جودة الخطوط والنصوص",
+      "بنية معلومات أفضل",
+      "أداء أسرع",
+      "تجربة بصرية فاخرة",
+    ],
   },
   {
     id: "naama-inn-hotel",
     title: "Naama Inn Hotel",
+    title_ar: "فندق نعمة إن",
     projectType: "new",
     showcaseTheme: "boutique" as const,
     showcaseVariant: "laptop" as const,
     category: "Hotel Website Redesign",
+    category_ar: "إعادة تصميم موقع فندق",
     year: "2024",
     heroImage: "/projects_ui/naama-inn-upload.png",
-    overview:
-      "Naama Inn Hotel required a complete digital refresh to align its online presence with modern hospitality standards. While the original website provided essential information, its aging design, dated visual presentation, and limited user experience no longer reflected the expectations of today's travelers. The goal of this redesign was to create a cleaner, faster, and more engaging experience that showcases the hotel professionally while improving usability across all devices.",
+    overview: "Naama Inn Hotel required a complete digital refresh to align its online presence with modern hospitality standards. While the original website provided essential information, its aging design, dated visual presentation, and limited user experience no longer reflected the expectations of today's travelers. The goal of this redesign was to create a cleaner, faster, and more engaging experience that showcases the hotel professionally while improving usability across all devices.",
+    overview_ar: "احتاج فندق نعمة إن إلى تحديث رقمي كامل لمواءمة حضوره عبر الإنترنت مع معايير الضيافة الحديثة. في حين قدم الموقع الأصلي المعلومات الأساسية، فإن تصميمه القديم وعرضه المرئي وتجربة المستخدم المحدودة لم تعد تعكس توقعات المسافرين اليوم. كان الهدف من إعادة التصميم هذا هو خلق تجربة أنظف وأسرع وأكثر جاذبية تعرض الفندق بشكل احترافي مع تحسين قابلية الاستخدام عبر جميع الأجهزة.",
     clientGoals: [
       "Create a cleaner, faster, and more engaging experience",
       "Showcase the hotel professionally",
       "Improve usability across all devices",
     ],
-    designProcess:
-      "The website was completely redesigned with a focus on simplicity, performance, and user experience. We focused on delivering a smoother browsing experience and a more professional brand image.",
-    challenges:
-      "The original website faced several challenges including an outdated visual design, inconsistent layout, limited mobile experience, and a slower user journey. It lacked modern hospitality-focused design elements, which reduced visual impact and guest engagement.",
+    clientGoals_ar: [
+      "خلق تجربة أنظف، أسرع وأكثر جاذبية",
+      "عرض الفندق بشكل احترافي",
+      "تحسين قابلية الاستخدام عبر جميع الأجهزة",
+    ],
+    designProcess: "The website was completely redesigned with a focus on simplicity, performance, and user experience. We focused on delivering a smoother browsing experience and a more professional brand image.",
+    challenges: "The original website faced several challenges including an outdated visual design, inconsistent layout, limited mobile experience, and a slower user journey. It lacked modern hospitality-focused design elements, which reduced visual impact and guest engagement.",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "SEO Optimization"],
     mockupDesktop: "/projects_ui/naama-inn-upload.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop",
     results: [
       "Modern and welcoming digital experience",
       "Efficient exploration and smoother browsing",
       "Professional and trustworthy hospitality platform",
+    ],
+    results_ar: [
+      "تجربة رقمية حديثة وترحيبية",
+      "تصفح فعال وأكثر سلاسة",
+      "منصة ضيافة احترافية وجديرة بالثقة",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1800&auto=format&fit=crop",
@@ -173,28 +225,42 @@ export const projects: Project[] = [
       "Faster loading experience",
       "Better presentation of hotel facilities",
     ],
+    keyImprovements_ar: [
+      "واجهة مستخدم حديثة وأنيقة",
+      "تصميم متجاوب بالكامل وملائم للهواتف",
+      "تحسين التنقل وبنية الصفحة",
+      "تحسين الخطوط والتسلسل المرئي",
+      "تجربة تحميل أسرع",
+      "عرض أفضل لمرافق الفندق",
+    ],
   },
   {
     id: "al-hisham-development",
     title: "Al Hisham Development",
+    title_ar: "الهشام للتطوير العقاري",
     projectType: "new",
     showcaseTheme: "realestate" as const,
     showcaseVariant: "imac" as const,
     category: "Real Estate Development",
+    category_ar: "تطوير عقاري",
     year: "2025",
     heroImage: "/projects_ui/al-hisham-upload.png",
-    overview:
-      "Al Hisham Development is a leading real estate firm specializing in luxury residential and commercial projects. They required a robust platform to showcase their portfolio of high-quality properties and sustainable real estate value.",
+    overview: "Al Hisham Development is a leading real estate firm specializing in luxury residential and commercial projects. They required a robust platform to showcase their portfolio of high-quality properties and sustainable real estate value.",
+    overview_ar: "الهشام للتطوير العقاري هي شركة رائدة متخصصة في المشاريع السكنية والتجارية الفاخرة. لقد احتاجوا إلى منصة قوية لعرض محفظتهم من العقارات عالية الجودة والقيمة العقارية المستدامة.",
     clientGoals: [
       "Display property portfolio interactively",
       "Capture high-quality leads",
       "Establish market authority",
       "Provide virtual walkthroughs",
     ],
-    designProcess:
-      "The design reflects architectural grandeur through bold typography, generous whitespace, and expansive property photography. We implemented a sleek filtering system to help investors find their ideal property type.",
-    challenges:
-      "Handling numerous high-resolution images and 3D renders without sacrificing website performance and load times.",
+    clientGoals_ar: [
+      "عرض محفظة العقارات بشكل تفاعلي",
+      "الحصول على عملاء محتملين بجودة عالية",
+      "تأسيس سلطة في السوق",
+      "تقديم جولات افتراضية",
+    ],
+    designProcess: "The design reflects architectural grandeur through bold typography, generous whitespace, and expansive property photography. We implemented a sleek filtering system to help investors find their ideal property type.",
+    challenges: "Handling numerous high-resolution images and 3D renders without sacrificing website performance and load times.",
     technologies: ["React", "Next.js", "Tailwind CSS"],
     mockupDesktop: "/projects_ui/al-hisham-upload.png",
     mockupMobile: "/projects_ui/al-hisham-upload.png",
@@ -202,6 +268,11 @@ export const projects: Project[] = [
       "Double the lead generation rate",
       "Faster content delivery",
       "Improved SEO performance",
+    ],
+    results_ar: [
+      "مضاعفة معدل توليد العملاء المحتملين",
+      "توصيل أسرع للمحتوى",
+      "تحسين أداء تحسين محركات البحث (SEO)",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1800&auto=format&fit=crop",
@@ -218,33 +289,48 @@ export const projects: Project[] = [
       "Lead Capture Integration",
       "Premium Corporate Design",
     ],
+    keyImprovements_ar: [
+      "تصفية متقدمة للعقارات",
+      "تحسين الصور عالية الدقة",
+      "تكامل التقاط العملاء المحتملين",
+      "تصميم شركات فاخر",
+    ],
   },
   {
     id: "royal-horizon-hotel",
     title: "Royal Horizon Hotel",
+    title_ar: "فندق الأفق الملكي",
     projectType: "new",
     category: "Luxury Hotel Website",
+    category_ar: "موقع فندق فاخر",
     year: "2025",
     heroImage: "/projects_ui/royal_horizon.png",
-    overview:
-      "A comprehensive luxury hotel website designed to provide a seamless and fast booking experience for global visitors. The site focuses on highlighting rooms and services in a modern way while optimizing user experience across all devices.",
+    overview: "A comprehensive luxury hotel website designed to provide a seamless and fast booking experience for global visitors. The site focuses on highlighting rooms and services in a modern way while optimizing user experience across all devices.",
+    overview_ar: "موقع إلكتروني شامل لفندق فاخر مصمم لتوفير تجربة حجز سلسة وسريعة للزوار العالميين. يركز الموقع على إبراز الغرف والخدمات بطريقة حديثة مع تحسين تجربة المستخدم عبر جميع الأجهزة.",
     clientGoals: [
       "Increase direct bookings",
       "Reduce reliance on external booking platforms",
       "Provide a seamless multilingual experience",
     ],
-    designProcess:
-      "The goal was to create a modern and fast website that provides a professional room display system with direct WhatsApp integration to facilitate communication and booking.",
-    challenges:
-      "Balancing a luxury aesthetic with lightning-fast load times and a complex multilingual architecture.",
+    clientGoals_ar: [
+      "زيادة الحجوزات المباشرة",
+      "تقليل الاعتماد على منصات الحجز الخارجية",
+      "تقديم تجربة متعددة اللغات سلسة",
+    ],
+    designProcess: "The goal was to create a modern and fast website that provides a professional room display system with direct WhatsApp integration to facilitate communication and booking.",
+    challenges: "Balancing a luxury aesthetic with lightning-fast load times and a complex multilingual architecture.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
     mockupDesktop: "/projects_ui/royal_horizon.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1542314831-c6a4d27ce66b?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1542314831-c6a4d27ce66b?q=80&w=800&auto=format&fit=crop",
     results: [
       "45% increase in direct bookings",
       "Performance score improved to 95/100",
       "Increased visitor retention rate",
+    ],
+    results_ar: [
+      "زيادة بنسبة 45% في الحجوزات المباشرة",
+      "تحسن درجة الأداء إلى 95/100",
+      "زيادة معدل احتفاظ الزوار",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1800&auto=format&fit=crop",
@@ -257,33 +343,48 @@ export const projects: Project[] = [
       "4-language support",
       "SEO optimization & Smart contact form",
     ],
+    keyImprovements_ar: [
+      "تصميم حديث وفاخر",
+      "نظام حجز مباشر وربط بالواتساب",
+      "دعم 4 لغات",
+      "تحسين محركات البحث ونموذج اتصال ذكي",
+    ],
   },
   {
     id: "luna-jewelry-store",
     title: "Luna Jewelry Store",
+    title_ar: "متجر لونا للمجوهرات",
     projectType: "new",
     category: "Jewelry eCommerce",
+    category_ar: "متجر مجوهرات إلكتروني",
     year: "2025",
     heroImage: "/projects_ui/luna_jewelry.png",
-    overview:
-      "An elegant eCommerce store specializing in luxury women's jewelry and accessories. The refined design reflects the brand's identity and significantly enhances the shopping experience.",
+    overview: "An elegant eCommerce store specializing in luxury women's jewelry and accessories. The refined design reflects the brand's identity and significantly enhances the shopping experience.",
+    overview_ar: "متجر إلكتروني أنيق متخصص في المجوهرات النسائية الفاخرة والإكسسوارات. يعكس التصميم الراقي هوية العلامة التجارية ويعزز بشكل كبير من تجربة التسوق.",
     clientGoals: [
       "Display products professionally",
       "Enhance the shopping experience",
       "Increase conversion rates",
     ],
-    designProcess:
-      "Designed with an elegant gold and white color palette, prioritizing high-resolution product photography and a frictionless checkout process.",
-    challenges:
-      "Implementing an advanced shopping cart and secure payment gateway while maintaining a luxurious feel.",
+    clientGoals_ar: [
+      "عرض المنتجات بشكل احترافي",
+      "تعزيز تجربة التسوق",
+      "زيادة معدلات التحويل",
+    ],
+    designProcess: "Designed with an elegant gold and white color palette, prioritizing high-resolution product photography and a frictionless checkout process.",
+    challenges: "Implementing an advanced shopping cart and secure payment gateway while maintaining a luxurious feel.",
     technologies: ["Next.js", "Tailwind CSS", "Stripe", "Framer Motion"],
     mockupDesktop: "/projects_ui/luna_jewelry.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1515562141207-7a8efbfc3473?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1515562141207-7a8efbfc3473?q=80&w=800&auto=format&fit=crop",
     results: [
       "Increased conversion rate",
       "Enhanced user experience",
       "Faster store loading speed",
+    ],
+    results_ar: [
+      "زيادة معدل التحويل",
+      "تعزيز تجربة المستخدم",
+      "سرعة تحميل المتجر أسرع",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1599643478514-4a4204142f1a?q=80&w=1800&auto=format&fit=crop",
@@ -296,33 +397,48 @@ export const projects: Project[] = [
       "Wishlist feature & Customer reviews",
       "Discount coupons system",
     ],
+    keyImprovements_ar: [
+      "تصنيف ذكي",
+      "عربة تسوق متقدمة ودفع آمن",
+      "ميزة قائمة الرغبات ومراجعات العملاء",
+      "نظام كوبونات الخصم",
+    ],
   },
   {
     id: "elite-properties",
     title: "Elite Properties Real Estate",
+    title_ar: "إليت للعقارات",
     projectType: "new",
     category: "Real Estate Platform",
+    category_ar: "منصة عقارية",
     year: "2024",
     heroImage: "/projects_ui/elite_properties.png",
-    overview:
-      "An advanced real estate platform for showcasing residential and commercial properties. It features an advanced search system that helps clients find the right property quickly.",
+    overview: "An advanced real estate platform for showcasing residential and commercial properties. It features an advanced search system that helps clients find the right property quickly.",
+    overview_ar: "منصة عقارية متقدمة لعرض العقارات السكنية والتجارية. تتميز بنظام بحث متقدم يساعد العملاء في العثور على العقار المناسب بسرعة.",
     clientGoals: [
       "Streamline property search",
       "Provide detailed property showcases",
       "Simplify the property viewing request process",
     ],
-    designProcess:
-      "Focused on a clean, corporate design with interactive map integrations and high-quality property media to inspire trust and reliability.",
-    challenges:
-      "Handling a massive database of properties with advanced filtering logic without compromising frontend performance.",
+    clientGoals_ar: [
+      "تبسيط البحث عن العقارات",
+      "تقديم عروض مفصلة للعقارات",
+      "تبسيط عملية طلب معاينة العقار",
+    ],
+    designProcess: "Focused on a clean, corporate design with interactive map integrations and high-quality property media to inspire trust and reliability.",
+    challenges: "Handling a massive database of properties with advanced filtering logic without compromising frontend performance.",
     technologies: ["React", "Node.js", "PostgreSQL", "Mapbox"],
     mockupDesktop: "/projects_ui/elite_properties.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
     results: [
       "Faster property discovery",
       "Significant increase in viewing requests",
       "Better mobile engagement",
+    ],
+    results_ar: [
+      "اكتشاف أسرع للعقارات",
+      "زيادة كبيرة في طلبات المشاهدة",
+      "مشاركة أفضل عبر الهاتف المحمول",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1800&auto=format&fit=crop",
@@ -335,33 +451,48 @@ export const projects: Project[] = [
       "Property comparison tool",
       "Save favorite properties functionality",
     ],
+    keyImprovements_ar: [
+      "بحث وتصفية متقدمين",
+      "خرائط عقارية تفاعلية",
+      "أداة مقارنة العقارات",
+      "ميزة حفظ العقارات المفضلة",
+    ],
   },
   {
     id: "care-medical-center",
     title: "Care Medical Center",
+    title_ar: "مركز كير الطبي",
     projectType: "new",
     category: "Medical Clinic Website",
+    category_ar: "موقع عيادة طبية",
     year: "2025",
     heroImage: "/projects_ui/care_medical.png",
-    overview:
-      "A professional medical website for a multi-specialty clinic that allows patients to book appointments online and learn about available services and doctors.",
+    overview: "A professional medical website for a multi-specialty clinic that allows patients to book appointments online and learn about available services and doctors.",
+    overview_ar: "موقع طبي احترافي لعيادة متعددة التخصصات يتيح للمرضى حجز المواعيد عبر الإنترنت والتعرف على الخدمات والأطباء المتاحين.",
     clientGoals: [
       "Digitize appointment booking",
       "Showcase clinic expertise and doctor profiles",
       "Provide accessible medical resources",
     ],
-    designProcess:
-      "Adopted a calming blue and white color scheme typical of healthcare brands, paired with a highly accessible layout suitable for all age groups.",
-    challenges:
-      "Creating a secure and compliant appointment scheduling system that syncs directly with the clinic's reception desk.",
+    clientGoals_ar: [
+      "رقمنة حجز المواعيد",
+      "عرض خبرة العيادة والملفات الشخصية للأطباء",
+      "توفير موارد طبية يمكن الوصول إليها",
+    ],
+    designProcess: "Adopted a calming blue and white color scheme typical of healthcare brands, paired with a highly accessible layout suitable for all age groups.",
+    challenges: "Creating a secure and compliant appointment scheduling system that syncs directly with the clinic's reception desk.",
     technologies: ["React", "Tailwind CSS", "Express", "PostgreSQL"],
     mockupDesktop: "/projects_ui/care_medical.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
     results: [
       "Streamlined patient booking process",
       "Reduced phone inquiries by 30%",
       "Increased patient trust and satisfaction",
+    ],
+    results_ar: [
+      "تبسيط عملية حجز المرضى",
+      "تقليل الاستفسارات الهاتفية بنسبة 30%",
+      "زيادة ثقة ورضا المرضى",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1800&auto=format&fit=crop",
@@ -374,33 +505,48 @@ export const projects: Project[] = [
       "Medical articles section",
       "Direct WhatsApp integration",
     ],
+    keyImprovements_ar: [
+      "حجز المواعيد عبر الإنترنت",
+      "ملفات شخصية شاملة للأطباء",
+      "قسم المقالات الطبية",
+      "تكامل مباشر مع الواتساب",
+    ],
   },
   {
     id: "taste-house-restaurant",
     title: "Taste House Restaurant",
+    title_ar: "مطعم تيست هاوس",
     projectType: "new",
     category: "Restaurant & Cafe Website",
+    category_ar: "موقع مطعم ومقهى",
     year: "2025",
     heroImage: "/projects_ui/taste_house.png",
-    overview:
-      "A modern restaurant website aimed at increasing orders and table reservations through an attractive and easy-to-use interface.",
+    overview: "A modern restaurant website aimed at increasing orders and table reservations through an attractive and easy-to-use interface.",
+    overview_ar: "موقع حديث للمطاعم يهدف إلى زيادة الطلبات وحجوزات الطاولات من خلال واجهة جذابة وسهلة الاستخدام.",
     clientGoals: [
       "Increase table reservations",
       "Showcase menu interactively",
       "Drive online delivery orders",
     ],
-    designProcess:
-      "Created an elegant dark-themed interface that makes the vibrant, luxury food photography pop, complemented by an intuitive digital menu.",
-    challenges:
-      "Designing a digital menu that is easy to navigate on mobile while still looking sophisticated and premium.",
+    clientGoals_ar: [
+      "زيادة حجوزات الطاولات",
+      "عرض القائمة بشكل تفاعلي",
+      "زيادة طلبات التوصيل عبر الإنترنت",
+    ],
+    designProcess: "Created an elegant dark-themed interface that makes the vibrant, luxury food photography pop, complemented by an intuitive digital menu.",
+    challenges: "Designing a digital menu that is easy to navigate on mobile while still looking sophisticated and premium.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
     mockupDesktop: "/projects_ui/taste_house.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
     results: [
       "50% increase in online reservations",
       "Enhanced brand identity",
       "Improved mobile browsing experience",
+    ],
+    results_ar: [
+      "زيادة بنسبة 50% في الحجوزات عبر الإنترنت",
+      "تعزيز هوية العلامة التجارية",
+      "تحسين تجربة التصفح على الهواتف المحمولة",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1414235077428-33898b12015c?q=80&w=1800&auto=format&fit=crop",
@@ -413,33 +559,48 @@ export const projects: Project[] = [
       "Direct WhatsApp ordering",
       "High-quality food gallery",
     ],
+    keyImprovements_ar: [
+      "قائمة رقمية تفاعلية",
+      "نظام حجز الطاولات",
+      "الطلب المباشر عبر واتساب",
+      "معرض صور طعام عالي الجودة",
+    ],
   },
   {
     id: "elevate-marketing",
     title: "Elevate Marketing Agency",
+    title_ar: "إيليفيت للتسويق",
     projectType: "new",
     category: "Digital Marketing Agency",
+    category_ar: "وكالة تسويق رقمي",
     year: "2024",
     heroImage: "/projects_ui/elevate_marketing.png",
-    overview:
-      "A vibrant and modern digital marketing agency website showcasing creative portfolios, service offerings, and an analytics dashboard for clients to track campaign success.",
+    overview: "A vibrant and modern digital marketing agency website showcasing creative portfolios, service offerings, and an analytics dashboard for clients to track campaign success.",
+    overview_ar: "موقع إلكتروني حيوي وحديث لوكالة تسويق رقمي يعرض محافظ الأعمال الإبداعية، وعروض الخدمات، ولوحة تحكم تحليلية للعملاء لتتبع نجاح الحملات.",
     clientGoals: [
       "Showcase creative capabilities",
       "Attract high-end corporate clients",
       "Provide client analytics transparency",
     ],
-    designProcess:
-      "Used vibrant gradients, micro-animations, and bold typography to communicate creativity and digital expertise.",
-    challenges:
-      "Developing a lightweight custom analytics dashboard that integrates with third-party tracking tools.",
+    clientGoals_ar: [
+      "عرض القدرات الإبداعية",
+      "جذب عملاء الشركات الراقية",
+      "توفير شفافية في تحليلات العملاء",
+    ],
+    designProcess: "Used vibrant gradients, micro-animations, and bold typography to communicate creativity and digital expertise.",
+    challenges: "Developing a lightweight custom analytics dashboard that integrates with third-party tracking tools.",
     technologies: ["React", "Vite", "Framer Motion", "GSAP"],
     mockupDesktop: "/projects_ui/elevate_marketing.png",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
     results: [
       "Tripled incoming leads",
       "Established strong brand authority",
       "Praised for innovative UI design",
+    ],
+    results_ar: [
+      "تضاعفت العملاء المحتملين ثلاث مرات",
+      "تأسيس سلطة قوية للعلامة التجارية",
+      "تم الإشادة بتصميم واجهة المستخدم المبتكر",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1800&auto=format&fit=crop",
@@ -452,39 +613,55 @@ export const projects: Project[] = [
       "Vibrant gradient UI",
       "Lead generation forms",
     ],
+    keyImprovements_ar: [
+      "شبكة معرض أعمال إبداعية",
+      "لوحة تحكم تحليلات العملاء",
+      "واجهة مستخدم متدرجة الألوان",
+      "نماذج توليد العملاء المحتملين",
+    ],
   },
   {
     id: "najeeb-salim-textiles",
     title: "Najeeb Salim Textiles",
+    title_ar: "نجيب سليم للأقمشة",
     projectType: "new",
     showcaseVariant: "imac" as const,
     category: "Shopify Development & Customization",
+    category_ar: "تطوير وتخصيص شوبيفاي",
     year: "2025",
-    heroImage:
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2500&auto=format&fit=crop",
-    overview:
-      "Najeeb Salim is an Egyptian company specializing in the supply of fabrics, curtains, and home furnishings, with certified partnerships with global hotel chains such as Marriott, Hilton, Holiday Inn, Mövenpick, and Rixos. The goal of the e-commerce platform was to showcase products with precise categorization, an engaging customer service experience for multiple regions, and full bilingual support.",
+    heroImage: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2500&auto=format&fit=crop",
+    overview: "Najeeb Salim is an Egyptian company specializing in the supply of fabrics, curtains, and home furnishings, with certified partnerships with global hotel chains such as Marriott, Hilton, Holiday Inn, Mövenpick, and Rixos. The goal of the e-commerce platform was to showcase products with precise categorization, an engaging customer service experience for multiple regions, and full bilingual support.",
+    overview_ar: "شركة مصرية متخصصة في توريد الأقمشة والستائر والمفروشات المنزلية، ولديها شراكات معتمدة مع سلاسل الفنادق العالمية مثل ماريوت وهيلتون وهوليداي إن وموفنبيك وريكسوس. كان الهدف من المنصة الإلكترونية هو عرض المنتجات بتصنيف دقيق وتجربة خدمة عملاء ممتازة لمناطق متعددة، ودعم كامل للغتين العربية والإنجليزية.",
     clientGoals: [
-      "Display a large fabric catalog with multi-layered filtering (fabric type, curtain type, room usage)",
+      "Display a large fabric catalog with multi-layered filtering",
       "Provide a fast and clear user experience",
       "Full Arabic and English bilingual support with RTL",
       "Showcase global hotel partnerships as a credibility element",
       "Integrate installment and cash payment options",
     ],
-    designProcess:
-      "We built and customized a Shopify store with a multi-layer categorization system. The design centers around trust — prominently displaying global hotel brand partnerships like Marriott and Hilton as social proof. A bilingual RTL-aware layout ensures an equally polished experience in both Arabic and English.",
-    challenges:
-      "The main challenge was building a catalog with multiple simultaneous filtering dimensions — fabric type, curtain type, and room — while maintaining a fast, intuitive user experience. RTL support required careful customization of both the Shopify theme and all custom sections.",
+    clientGoals_ar: [
+      "عرض كتالوج كبير من الأقمشة مع تصفية متعددة الطبقات",
+      "تقديم تجربة مستخدم سريعة وواضحة",
+      "دعم كامل للغتين العربية والإنجليزية مع دعم اتجاه اليمين لليسار (RTL)",
+      "عرض شراكات الفنادق العالمية كعنصر مصداقية",
+      "تكامل خيارات الدفع بالتقسيط والنقد",
+    ],
+    designProcess: "We built and customized a Shopify store with a multi-layer categorization system. The design centers around trust — prominently displaying global hotel brand partnerships like Marriott and Hilton as social proof. A bilingual RTL-aware layout ensures an equally polished experience in both Arabic and English.",
+    challenges: "The main challenge was building a catalog with multiple simultaneous filtering dimensions — fabric type, curtain type, and room — while maintaining a fast, intuitive user experience. RTL support required careful customization of both the Shopify theme and all custom sections.",
     technologies: ["Shopify", "Liquid", "Custom Theme Development", "Google Maps API", "RTL Support"],
-    mockupDesktop:
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1800&auto=format&fit=crop",
-    mockupMobile:
-      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop",
+    mockupDesktop: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1800&auto=format&fit=crop",
+    mockupMobile: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop",
     results: [
       "E-commerce platform ready for institutional-scale orders",
       "High client trust through hotel partnership showcases",
       "Seamless bilingual (Arabic/English) shopping experience",
       "Interactive branch map linked to Google Maps by governorate",
+    ],
+    results_ar: [
+      "منصة تجارة إلكترونية جاهزة للطلبات المؤسسية",
+      "ثقة عالية من العملاء من خلال عرض شراكات الفنادق",
+      "تجربة تسوق سلسة ثنائية اللغة",
+      "خريطة فروع تفاعلية مرتبطة بخرائط جوجل",
     ],
     gallery: [
       "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1800&auto=format&fit=crop",
@@ -499,6 +676,14 @@ export const projects: Project[] = [
       "Interactive branch map (Google Maps)",
       "Installment & cash payment options",
       "Customer photo review system",
+    ],
+    keyImprovements_ar: [
+      "نظام تصنيف الأقمشة متعدد الطبقات",
+      "دعم كامل للغة العربية (RTL)",
+      "قسم مصداقية شراكات الفنادق",
+      "خريطة فروع تفاعلية",
+      "خيارات الدفع النقدي والتقسيط",
+      "نظام تقييم العملاء بالصور",
     ],
   },
 ];

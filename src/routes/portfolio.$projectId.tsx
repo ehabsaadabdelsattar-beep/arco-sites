@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { ArrowLeft, CheckCircle2, ExternalLink, ArrowRight } from "lucide-react";
 import { projects } from "../data/projects";
 import { Magnetic } from "../components/Magnetic";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/portfolio/$projectId")({
   component: CaseStudyPage,
@@ -23,6 +24,8 @@ export const Route = createFileRoute("/portfolio/$projectId")({
 function CaseStudyPage() {
   const { project } = Route.useLoaderData();
   const router = useRouter();
+  const { t, i18n } = useTranslation("portfolio");
+  const isAr = i18n.language?.startsWith("ar");
 
   // Scroll to top when project changes
   useEffect(() => {
@@ -80,7 +83,7 @@ function CaseStudyPage() {
                 backgroundColor: "rgba(128,128,128,0.1)",
               }}
             >
-              {project.category}
+              {isAr ? (project.category_ar || project.category) : project.category}
             </span>
           </motion.div>
 
@@ -88,20 +91,20 @@ function CaseStudyPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="mb-8 text-5xl font-bold tracking-tighter sm:text-7xl lg:text-8xl"
+            className={`mb-8 text-5xl font-bold sm:text-7xl lg:text-8xl ${isAr ? "leading-[1.2] tracking-normal" : "tracking-tighter"}`}
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
-            {project.title}
+            {isAr ? (project.title_ar || project.title) : project.title}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="mx-auto max-w-3xl text-lg sm:text-xl leading-relaxed"
+            className={`mx-auto max-w-3xl text-lg sm:text-xl ${isAr ? "leading-[1.8]" : "leading-relaxed"}`}
             style={{ color: "var(--muted-foreground)" }}
           >
-            {project.overview}
+            {isAr ? (project.overview_ar || project.overview) : project.overview}
           </motion.p>
         </div>
       </section>
@@ -110,11 +113,11 @@ function CaseStudyPage() {
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-12 lg:px-24">
         <Link
           to="/portfolio"
-          className="group mb-16 inline-flex items-center text-sm font-bold uppercase tracking-widest transition-colors hover:text-foreground"
+          className={`group mb-16 inline-flex items-center text-sm font-bold uppercase tracking-widest transition-colors hover:text-foreground ${isAr ? "flex-row-reverse" : ""}`}
           style={{ color: "var(--muted-foreground)" }}
         >
-          <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to Showroom
+          <ArrowLeft className={`h-4 w-4 transition-transform group-hover:-translate-x-1 ${isAr ? "ml-2 rotate-180" : "mr-2"}`} />
+          {t("back_to_portfolio")}
         </Link>
 
         {/* 2. Before vs After Section */}
@@ -125,10 +128,11 @@ function CaseStudyPage() {
                 className="text-3xl font-bold sm:text-5xl"
                 style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
               >
-                Before & <span className="italic text-primary">After</span>
+                {isAr ? "قبل وبعد" : "Before & "}
+                {!isAr && <span className="italic text-primary">After</span>}
               </h2>
               <p className="mt-4 text-lg" style={{ color: "var(--muted-foreground)" }}>
-                The transformation from the original website to the modern redesign.
+                {isAr ? "التحول من الموقع القديم إلى التصميم الحديث." : "The transformation from the original website to the modern redesign."}
               </p>
             </div>
 
@@ -220,7 +224,8 @@ function CaseStudyPage() {
                 className="text-3xl font-bold sm:text-5xl"
                 style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
               >
-                Project <span className="italic text-primary">Gallery</span>
+                {isAr ? "معرض" : "Project "}
+                <span className={isAr ? "text-primary" : "italic text-primary"}>{isAr ? " الصور" : "Gallery"}</span>
               </h2>
             </div>
             <div className="grid gap-8 lg:grid-cols-2">
@@ -249,16 +254,16 @@ function CaseStudyPage() {
               className="mb-8 text-2xl font-bold sm:text-4xl"
               style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
             >
-              Project Goals
+              {isAr ? "أهداف المشروع" : "Project Goals"}
             </h3>
             <ul className="space-y-6">
-              {project.clientGoals.map((goal, i) => (
+              {(isAr && project.clientGoals_ar ? project.clientGoals_ar : project.clientGoals).map((goal, i) => (
                 <li
                   key={i}
                   className="flex items-start text-lg sm:text-xl"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  <CheckCircle2 className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
+                  <CheckCircle2 className={`mt-1 h-6 w-6 flex-shrink-0 text-primary ${isAr ? "ml-4" : "mr-4"}`} />
                   <span>{goal}</span>
                 </li>
               ))}
@@ -274,16 +279,16 @@ function CaseStudyPage() {
               className="mb-8 text-2xl font-bold sm:text-4xl"
               style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
             >
-              Key Improvements
+              {t("case_study.key_improvements", "Key Improvements")}
             </h3>
             <ul className="space-y-6">
-              {project.keyImprovements.map((improvement, i) => (
+              {(isAr && project.keyImprovements_ar ? project.keyImprovements_ar : project.keyImprovements).map((improvement, i) => (
                 <li
                   key={i}
                   className="flex items-start text-lg sm:text-xl"
                   style={{ color: "var(--muted-foreground)" }}
                 >
-                  <CheckCircle2 className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
+                  <CheckCircle2 className={`mt-1 h-6 w-6 flex-shrink-0 text-primary ${isAr ? "ml-4" : "mr-4"}`} />
                   <span>{improvement}</span>
                 </li>
               ))}
@@ -297,10 +302,13 @@ function CaseStudyPage() {
             className="mb-12 text-3xl font-bold sm:text-5xl"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
-            The <span className="italic text-primary">Results</span>
+            {isAr ? "الـ " : "The "}
+            <span className={isAr ? "text-primary" : "italic text-primary"}>
+              {t("case_study.results", "Results")}
+            </span>
           </h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {project.results.map((result, i) => (
+            {(isAr && project.results_ar ? project.results_ar : project.results).map((result, i) => (
               <div
                 key={i}
                 className="flex flex-col items-center gap-4 rounded-3xl p-8"
@@ -325,8 +333,8 @@ function CaseStudyPage() {
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
             {project.projectType === "redesign"
-              ? "Explore the Transformation"
-              : "Visit the Project"}
+              ? (isAr ? "استكشف التحول" : "Explore the Transformation")
+              : (isAr ? "زيارة المشروع" : "Visit the Project")}
           </h2>
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
             {project.projectType === "redesign" && project.oldUrl && (
@@ -377,17 +385,17 @@ function CaseStudyPage() {
           style={{ borderRight: "1px solid var(--border)" }}
         >
           <span
-            className="mb-4 flex items-center text-xs font-bold uppercase tracking-widest"
+            className={`mb-4 flex items-center text-xs font-bold uppercase tracking-widest ${isAr ? "flex-row-reverse" : ""}`}
             style={{ color: "var(--muted-foreground)" }}
           >
-            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-2" />
-            Previous Project
+            <ArrowLeft className={`h-4 w-4 transition-transform ${isAr ? "ml-2 rotate-180 group-hover:translate-x-2" : "mr-2 group-hover:-translate-x-2"}`} />
+            {isAr ? "المشروع السابق" : "Previous Project"}
           </span>
           <h3
             className="text-2xl font-bold sm:text-4xl"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
-            {prevProject.title}
+            {isAr ? (prevProject.title_ar || prevProject.title) : prevProject.title}
           </h3>
         </Link>
 
@@ -397,17 +405,17 @@ function CaseStudyPage() {
           className="group flex flex-col items-end justify-center p-8 transition-colors sm:p-16 text-right hover:bg-black/5 dark:hover:bg-white/5"
         >
           <span
-            className="mb-4 flex items-center text-xs font-bold uppercase tracking-widest"
+            className={`mb-4 flex items-center text-xs font-bold uppercase tracking-widest ${isAr ? "flex-row-reverse" : ""}`}
             style={{ color: "var(--muted-foreground)" }}
           >
-            Next Project
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
+            {isAr ? "المشروع التالي" : t("case_study.next_project", "Next Project")}
+            <ArrowRight className={`h-4 w-4 transition-transform ${isAr ? "mr-2 rotate-180 group-hover:-translate-x-2" : "ml-2 group-hover:translate-x-2"}`} />
           </span>
           <h3
             className="text-2xl font-bold sm:text-4xl"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
-            {nextProject.title}
+            {isAr ? (nextProject.title_ar || nextProject.title) : nextProject.title}
           </h3>
         </Link>
       </section>

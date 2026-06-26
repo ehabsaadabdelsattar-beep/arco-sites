@@ -3,19 +3,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { projects } from "../data/projects";
 import { TiltCard } from "../components/TiltCard";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/portfolio/")({
   component: PortfolioIndexPage,
 });
 
-const uniqueCategories = Array.from(new Set(projects.map((p) => p.category)));
-const filters = ["All", ...uniqueCategories];
-
 function PortfolioIndexPage() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const { t, i18n } = useTranslation("portfolio");
+  const isAr = i18n.language?.startsWith("ar");
+
+  const uniqueCategories = Array.from(new Set(projects.map((p) => isAr ? (p.category_ar || p.category) : p.category)));
+  const filters = [t("all_label", "All"), ...uniqueCategories];
+
+  const [activeFilter, setActiveFilter] = useState(filters[0]);
 
   const filteredProjects = projects.filter((project) =>
-    activeFilter === "All" ? true : project.category === activeFilter,
+    activeFilter === filters[0] ? true : (isAr ? (project.category_ar || project.category) : project.category) === activeFilter,
   );
 
   return (
@@ -32,14 +36,15 @@ function PortfolioIndexPage() {
             className="text-6xl font-bold tracking-tighter sm:text-8xl lg:text-[8rem]"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
-            The <span className="italic text-primary">Showroom</span>
+            {isAr ? "أعمالنا" : "The Showroom"}
           </h1>
           <p
-            className="mt-8 text-xl max-w-2xl mx-auto"
+            className={`mt-8 text-xl max-w-2xl mx-auto ${isAr ? "leading-relaxed" : ""}`}
             style={{ color: "var(--muted-foreground)" }}
           >
-            Real hotel websites, real results. A focused portfolio of premium web design and
-            development for the hospitality industry.
+            {isAr
+              ? "مواقع حقيقية، نتائج ملموسة. معرض أعمال مُركّز لتصميم وتطوير مواقع الويب الفاخرة لقطاع الضيافة والشركات."
+              : "Real hotel websites, real results. A focused portfolio of premium web design and development for the hospitality industry."}
           </p>
         </motion.div>
       </section>
@@ -104,7 +109,7 @@ function PortfolioIndexPage() {
                     <div className="absolute inset-0 flex flex-col justify-between p-8 sm:p-12">
                       <div className="flex justify-between items-start">
                         <span className="rounded-full border border-white/10 bg-black/40 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
-                          {project.category}
+                          {isAr ? (project.category_ar || project.category) : project.category}
                         </span>
                         <div className="h-12 w-12 rounded-full border border-white/20 bg-black/40 flex items-center justify-center backdrop-blur-md transition-transform group-hover:scale-110">
                           <span className="text-white text-xl">↗</span>
@@ -116,7 +121,7 @@ function PortfolioIndexPage() {
                           className="text-4xl font-bold text-white sm:text-5xl"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
-                          {project.title}
+                          {isAr ? (project.title_ar || project.title) : project.title}
                         </h2>
                         <div className="mt-4 flex flex-wrap gap-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                           {project.technologies.slice(0, 3).map((tech) => (
