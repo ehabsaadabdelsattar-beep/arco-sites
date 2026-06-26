@@ -14,18 +14,10 @@ import {
 } from "lucide-react";
 import servicesHero from "../assets/services-hero.jpg";
 import { Magnetic } from "../components/Magnetic";
+import { useTranslation } from "react-i18next";
+
 
 export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Our Services — Arco Sites" },
-      {
-        name: "description",
-        content:
-          "Explore our comprehensive web design and development services tailored to hotels, businesses, and startups.",
-      },
-    ],
-  }),
   component: ServicesPage,
 });
 
@@ -104,6 +96,37 @@ const staggerContainer = {
 };
 
 function ServicesPage() {
+  const { t } = useTranslation("services");
+
+  const allServices = [
+    { icon: Building, title: t("services.hotel_title"), description: t("services.hotel_desc") },
+    { icon: Briefcase, title: t("services.business_title"), description: t("services.business_desc") },
+    { icon: ShoppingCart, title: t("services.ecommerce_title"), description: t("services.ecommerce_desc") },
+    { icon: FileText, title: t("services.landing_title"), description: t("services.landing_desc") },
+    { icon: Zap, title: t("services.speed_title"), description: t("services.speed_desc") },
+    { icon: Search, title: t("services.seo_title"), description: t("services.seo_desc") },
+    { icon: RefreshCw, title: t("services.redesign_title"), description: t("services.redesign_desc") },
+    { icon: Smartphone, title: t("services.mobile_title"), description: t("services.mobile_desc") },
+    { icon: Wrench, title: t("services.maintenance_title"), description: t("services.maintenance_desc") },
+  ];
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+    },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
   return (
     <div className="flex flex-col">
       {/* Hero */}
@@ -135,14 +158,14 @@ function ServicesPage() {
             className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Digital <span className="text-primary">Excellence</span>
+            {t("hero_title")}{" "}
+            <span className="text-primary">{t("hero_title_accent")}</span>
           </motion.h1>
           <motion.p
             variants={fadeInUp}
             className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground"
           >
-            Comprehensive web solutions tailored to your unique business needs. From design to
-            deployment and beyond.
+            {t("hero_subtitle")}
           </motion.p>
         </motion.div>
       </section>
@@ -199,11 +222,10 @@ function ServicesPage() {
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Not Sure What You Need?
+            {t("cta_title")}
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-xl text-muted-foreground">
-            Every project is unique. Let's discuss your goals and find the right solution for your
-            business.
+            {t("cta_desc")}
           </p>
           <div className="mt-10">
             <Magnetic>
@@ -211,8 +233,8 @@ function ServicesPage() {
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-10 py-5 text-base font-bold text-primary-foreground transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-[0_0_40px_rgba(var(--primary),0.5)]"
               >
-                Get a Free Consultation
-                <ArrowRight className="h-5 w-5" />
+                {t("cta_button")}
+                <ArrowRight className="h-5 w-5 rtl:rotate-180" />
               </Link>
             </Magnetic>
           </div>

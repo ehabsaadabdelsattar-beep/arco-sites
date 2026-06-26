@@ -1,0 +1,45 @@
+{
+  "meta_title": "Arco Sites — Premium Web Design & Development",
+  "meta_description": "Websites built like five-star hospitality. We build high-performance, visually refined websites for hotels and businesses.",
+  "hero_title": "Websites designed like",
+  "hero_title_accent": "five-star hospitality.",
+  "hero_subtitle": "Elevate your brand with a premium digital experience that drives real results.",
+  "hero_cta": "Start Project",
+  "hero_cta_secondary": "View Our Work",
+  "stats": {
+    "projects": "Projects Delivered",
+    "projects_value": "10+",
+    "mobile": "Mobile First",
+    "mobile_value": "100%",
+    "response": "Avg Response",
+    "response_value": "24h"
+  },
+  "services_title": "What we offer.",
+  "services": {
+    "design_title": "Custom Design",
+    "design_desc": "Every site is crafted from scratch to match your unique brand identity.",
+    "performance_title": "Performance",
+    "performance_desc": "Optimized for speed with a technical foundation built to last.",
+    "mobile_title": "Mobile-First",
+    "mobile_desc": "Responsive by design to work perfectly across all devices.",
+    "seo_title": "SEO & Conversion",
+    "seo_desc": "Built to rank on search engines and convert visitors into loyal customers."
+  },
+  "process_title": "How we work.",
+  "process": {
+    "step1_num": "01",
+    "step1_title": "Discover",
+    "step1_desc": "We understand your brand, goals, and target audience to build a solid foundation.",
+    "step2_num": "02",
+    "step2_title": "Design & Build",
+    "step2_desc": "We craft a stunning interface and engineer a blazing-fast, robust website.",
+    "step3_num": "03",
+    "step3_title": "Launch & Support",
+    "step3_desc": "We deploy your site to the world and provide ongoing support to ensure success."
+  },
+  "portfolio_title": "Selected Work.",
+  "portfolio_cta": "View All Projects →",
+  "testimonials_title": "What our clients say.",
+  "cta_title": "Ready to start?",
+  "cta_button": "Start Project"
+}

@@ -1,15 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-
-const footerLinks = [
-  { label: "Services", to: "/services" },
-  { label: "Work", to: "/portfolio" },
-  { label: "Pricing", to: "/pricing" },
-  { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
-];
+import { useTranslation } from "react-i18next";
 
 export function Footer() {
+  const { t } = useTranslation("common");
+
+  const footerLinks = [
+    { label: t("nav.services"), to: "/services" },
+    { label: t("nav.work"), to: "/portfolio" },
+    { label: t("nav.pricing"), to: "/pricing" },
+    { label: t("nav.about"), to: "/about" },
+    { label: t("nav.contact"), to: "/contact" },
+  ];
+
   return (
     <footer
       className="px-6 py-16 sm:px-12 lg:px-24"
@@ -29,10 +32,10 @@ export function Footer() {
               className="mt-3 text-sm leading-relaxed"
               style={{ color: "var(--muted-foreground)" }}
             >
-              Premium web design and development for hotels and businesses.
+              {t("footer.tagline")}
             </p>
             <div className="mt-6 space-y-1 text-sm" style={{ color: "var(--muted-foreground)" }}>
-              <p>Beni Suef, Egypt</p>
+              <p>{t("footer.location")}</p>
               <a
                 href="tel:+201026296556"
                 className="block transition-colors hover:opacity-70"
@@ -73,15 +76,7 @@ export function Footer() {
             color: "var(--muted-foreground)",
           }}
         >
-          <p>© {new Date().getFullYear()} Arco Sites. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:opacity-70">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:opacity-70">
-              Terms of Service
-            </a>
-          </div>
+          <p>{t("footer.rights", { year: new Date().getFullYear() })}</p>
         </div>
       </div>
     </footer>

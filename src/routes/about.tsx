@@ -2,28 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Target, Eye } from "lucide-react";
 import aboutWorkspace from "../assets/about-workspace.jpg";
+import { useTranslation } from "react-i18next";
+
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Arco Sites" },
-      {
-        name: "description",
-        content:
-          "Learn about Arco Sites' mission, vision, and commitment to delivering professional web solutions.",
-      },
-      { property: "og:title", content: "About Us — Arco Sites" },
-      {
-        property: "og:description",
-        content:
-          "Learn about Arco Sites' mission, vision, and commitment to delivering professional web solutions.",
-      },
-    ],
-  }),
   component: AboutPage,
 });
 
 function AboutPage() {
+  const { t } = useTranslation("about");
   return (
     <div className="flex flex-col">
       {/* Hero */}
@@ -41,11 +28,10 @@ function AboutPage() {
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            About Arco Sites
+            {t("hero_title")}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            We transform ideas into professional digital experiences that leave a lasting
-            impression.
+            {t("hero_subtitle")}
           </p>
         </div>
       </section>
@@ -56,25 +42,12 @@ function AboutPage() {
           className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Who We Are
+          {t("who_title")}
         </h2>
         <div className="mt-6 space-y-6 text-base leading-relaxed text-muted-foreground">
-          <p>
-            At Arco Sites, we create modern, high-performance websites that help businesses build
-            trust, strengthen their online presence, and convert visitors into customers.
-          </p>
-          <p>
-            We specialize in designing and developing fast, responsive, and user-friendly websites
-            tailored to the unique needs of each client. Whether you need a hotel website, a
-            business website, a landing page, or a complete digital presence, we focus on delivering
-            clean design, excellent performance, and a seamless user experience across all devices.
-          </p>
-          <p>
-            Our approach combines modern technologies, intuitive design, and attention to detail to
-            ensure that every website is visually appealing, easy to navigate, and optimized for
-            growth. We believe that a website should be more than just an online brochure—it should
-            be a powerful tool that supports your business goals and enhances your brand image.
-          </p>
+          <p>{t("who_p1")}</p>
+          <p>{t("who_p2")}</p>
+          <p>{t("who_p3")}</p>
         </div>
       </section>
 
@@ -90,12 +63,10 @@ function AboutPage() {
                 className="mt-5 text-2xl font-bold tracking-tight text-foreground"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Our Mission
+                {t("mission_title")}
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                Our mission is to help businesses establish a strong digital presence through
-                professional websites that inspire confidence, attract customers, and support
-                long-term success.
+                {t("mission_desc")}
               </p>
             </div>
             <div className="rounded-2xl border border-border/40 bg-card/30 p-8 lg:p-10">
@@ -106,11 +77,10 @@ function AboutPage() {
                 className="mt-5 text-2xl font-bold tracking-tight text-foreground"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Our Vision
+                {t("vision_title")}
               </h3>
               <p className="mt-4 leading-relaxed text-muted-foreground">
-                To become a trusted partner for businesses seeking innovative, high-quality web
-                solutions that combine design excellence with modern technology.
+                {t("vision_desc")}
               </p>
             </div>
           </div>
@@ -123,18 +93,18 @@ function AboutPage() {
           className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Let's Work Together
+          {t("cta_title")}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Ready to elevate your digital presence? We're here to help you build something remarkable.
+          {t("cta_desc")}
         </p>
         <div className="mt-8">
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Start Your Project
-            <ArrowRight className="h-5 w-5" />
+            {t("cta_button")}
+            <ArrowRight className="h-5 w-5 rtl:rotate-180" />
           </Link>
         </div>
       </section>

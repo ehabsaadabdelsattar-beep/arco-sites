@@ -9,7 +9,7 @@ export function Logo({ className = "", size = "md" }: LogoProps) {
   const heights = {
     sm: "h-8",
     md: "h-14",
-    lg: "h-20"
+    lg: "h-20",
   };
 
   return (
@@ -18,14 +18,14 @@ export function Logo({ className = "", size = "md" }: LogoProps) {
       <img
         src="/arco-logo-white.png"
         alt="ARCO SITES"
-        className={`${heights[size]} w-auto transition-opacity duration-300 block light:hidden`}
+        className={`${size === "sm" ? "h-8" : size === "md" ? "h-14" : "h-20"} w-auto transition-opacity duration-300 block light:hidden`}
       />
-      
+
       {/* Light theme logo (hidden by default, shown when .light is active) */}
       <img
         src="/arco-logo-purple.png"
         alt="ARCO SITES"
-        className={`${heights[size]} w-auto transition-opacity duration-300 hidden light:block`}
+        className={`${size === "sm" ? "h-8" : size === "md" ? "h-14" : "h-20"} w-auto transition-opacity duration-300 hidden light:block`}
       />
     </Link>
   );

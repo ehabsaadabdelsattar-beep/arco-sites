@@ -1,0 +1,51 @@
+{
+  "meta_title": "Contact Us — Arco Sites",
+  "meta_description": "Get in touch with Arco Sites to discuss your next web project. Free consultation available.",
+  "hero_title": "Get in Touch",
+  "hero_subtitle": "Ready to start your project? Fill out the form below and we'll get back to you with a free consultation.",
+  "info": {
+    "contact": "Contact Info",
+    "location": "Beni Suef, Egypt",
+    "consultation": "Free Consultation",
+    "consultation_desc": "Schedule a no-obligation call to discuss your project needs and goals.",
+    "response": "Response Time",
+    "response_desc": "We typically respond to all inquiries within 24 hours during business days."
+  },
+  "form": {
+    "step1_title": "What type of project is this?",
+    "step2_title": "What is your estimated budget?",
+    "step3_title": "Project Details",
+    "step4_title": "Your Contact Info",
+    "step_of": "Step {{current}} of {{total}}",
+    "next": "Continue",
+    "back": "Back",
+    "submit": "Submit Request",
+    "submitting": "Sending...",
+    "description_label": "Description",
+    "description_placeholder": "Tell us a bit about your goals and requirements...",
+    "deadline_label": "Desired Deadline (Optional)",
+    "deadline_placeholder": "e.g. 1 month, Q3, etc.",
+    "name_label": "Full Name",
+    "name_placeholder": "John Doe",
+    "email_label": "Email Address",
+    "email_placeholder": "john@example.com",
+    "phone_label": "Phone Number",
+    "phone_placeholder": "+1 234 567 890",
+    "success_title": "Request Received!",
+    "success_desc": "Thank you for reaching out, {{name}}. We'll review your project details and get back to you soon.",
+    "error_submit": "Failed to submit request. Please try again."
+  },
+  "project_types": {
+    "hotel": "Hotel",
+    "real_estate": "Real Estate",
+    "restaurant": "Restaurant",
+    "ecommerce": "E-commerce / Store",
+    "other": "Other"
+  },
+  "budgets": {
+    "landing": "Landing Page ($999)",
+    "corporate": "Corporate ($2,499)",
+    "ecommerce": "E-commerce ($4,999+)",
+    "custom": "Custom / Not Sure"
+  }
+}

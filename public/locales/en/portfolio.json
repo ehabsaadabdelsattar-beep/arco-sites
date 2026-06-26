@@ -1,0 +1,20 @@
+{
+  "meta_title": "Our Work — Arco Sites",
+  "meta_description": "Browse our diverse portfolio of hotel, corporate, and e-commerce website design and development projects.",
+  "page_title": "Our Work",
+  "page_subtitle": "Real projects. Real results.",
+  "all_label": "All",
+  "view_case_study": "View Case Study",
+  "live_site": "Visit Live Site",
+  "back_to_portfolio": "← Back to Portfolio",
+  "case_study": {
+    "overview": "Overview",
+    "challenge": "The Challenge",
+    "solution": "The Solution",
+    "results": "Results",
+    "technologies": "Technologies Used",
+    "key_improvements": "Key Improvements",
+    "view_live": "Visit Live Site",
+    "next_project": "Next Project"
+  }
+}

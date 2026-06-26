@@ -9,6 +9,9 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { I18nextProvider } from "react-i18next";
+import i18n from "../lib/i18n";
+
 
 import appCss from "../styles.css?url";
 
@@ -117,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap",
       },
     ],
   }),
@@ -129,12 +132,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
-        {/* Flash-prevention: set theme class before any CSS loads */}
+        {/* Flash-prevention: set theme and language before any CSS loads */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('arco-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`,
+            __html: `(function(){try{
+  var t=localStorage.getItem('arco-theme');
+  if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
+  if(t==='light'){document.documentElement.classList.add('light');}
+  var lang=localStorage.getItem('arco-lang')||'ar';
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+}catch(e){}})();`,
           }}
         />
         <HeadContent />
@@ -153,16 +163,29 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const location = useLocation();
 
+  // Sync font-family based on language
+  const lang = i18n.language?.startsWith("ar") ? "ar" : "en";
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Preloader />
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
-    </QueryClientProvider>
+    <I18nextProvider i18n={i18n}>
+      <QueryClientProvider client={queryClient}>
+        <Preloader />
+        <div
+          className="flex min-h-screen flex-col"
+          style={{
+            fontFamily:
+              lang === "ar"
+                ? "'IBM Plex Sans Arabic', sans-serif"
+                : "var(--font-sans)",
+          }}
+        >
+          <Header />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
+      </QueryClientProvider>
+    </I18nextProvider>
   );
 }

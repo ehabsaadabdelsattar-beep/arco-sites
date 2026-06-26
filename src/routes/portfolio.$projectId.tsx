@@ -324,7 +324,9 @@ function CaseStudyPage() {
             className="mb-8 text-2xl font-bold sm:text-4xl"
             style={{ fontFamily: "var(--font-display)", color: "var(--foreground)" }}
           >
-            {project.projectType === "redesign" ? "Explore the Transformation" : "Visit the Project"}
+            {project.projectType === "redesign"
+              ? "Explore the Transformation"
+              : "Visit the Project"}
           </h2>
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
             {project.projectType === "redesign" && project.oldUrl && (
@@ -355,7 +357,9 @@ function CaseStudyPage() {
               }}
             >
               <ExternalLink className="h-4 w-4" />
-              {project.projectType === "redesign" ? "Visit Redesigned Website" : "Visit Live Website"}
+              {project.projectType === "redesign"
+                ? "Visit Redesigned Website"
+                : "Visit Live Website"}
             </a>
           </div>
         </div>

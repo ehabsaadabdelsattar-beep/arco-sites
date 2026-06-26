@@ -1,0 +1,20 @@
+{
+  "meta_title": "أعمالنا — Arco Sites",
+  "meta_description": "استعرض مشاريعنا المتنوعة في تصميم وتطوير مواقع الفنادق والشركات والتجارة الإلكترونية.",
+  "page_title": "أعمالنا",
+  "page_subtitle": "مشاريع حقيقية. نتائج حقيقية.",
+  "all_label": "الكل",
+  "view_case_study": "عرض دراسة الحالة",
+  "live_site": "زيارة الموقع",
+  "back_to_portfolio": "← العودة إلى الأعمال",
+  "case_study": {
+    "overview": "نظرة عامة",
+    "challenge": "التحدي",
+    "solution": "الحل",
+    "results": "النتائج",
+    "technologies": "التقنيات المستخدمة",
+    "key_improvements": "التحسينات الرئيسية",
+    "view_live": "زيارة الموقع",
+    "next_project": "المشروع التالي"
+  }
+}

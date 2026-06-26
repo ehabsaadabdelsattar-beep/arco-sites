@@ -1,0 +1,30 @@
+{
+  "meta_title": "Our Services — Arco Sites",
+  "meta_description": "Explore our comprehensive web design and development services tailored to hotels, businesses, and startups.",
+  "hero_title": "Digital",
+  "hero_title_accent": "Excellence",
+  "hero_subtitle": "Comprehensive web solutions tailored to your unique business needs. From design to deployment and beyond.",
+  "services": {
+    "hotel_title": "Hotel & Hospitality Websites",
+    "hotel_desc": "Booking-focused sites designed to drive reservations. Showcase your rooms, amenities, and experiences with stunning visuals that convert visitors into guests.",
+    "business_title": "Business & Corporate Websites",
+    "business_desc": "Professional sites that build credibility and communicate your value proposition clearly to potential clients and partners.",
+    "ecommerce_title": "E-Commerce Solutions",
+    "ecommerce_desc": "Scalable online stores designed to maximize sales. We integrate secure payment gateways, inventory management, and intuitive shopping experiences.",
+    "landing_title": "Landing Pages",
+    "landing_desc": "High-converting pages focused on a single goal—whether that's lead generation, product launches, or event signups. Optimized for maximum ROI.",
+    "speed_title": "Site Speed Optimization",
+    "speed_desc": "Lightning-fast load times through code optimization, asset compression, caching strategies, and modern frontend frameworks like React and Vite.",
+    "seo_title": "Search Engine Optimization (SEO)",
+    "seo_desc": "SEO-friendly structure from day one. Clean markup, semantic HTML, fast loading, and optimized metadata to help you rank higher on Google.",
+    "redesign_title": "Redesign & Modernization",
+    "redesign_desc": "Refresh outdated sites with modern design standards, improved performance, and updated technology stacks.",
+    "mobile_title": "Mobile-Responsive Design",
+    "mobile_desc": "Every website we build looks and performs flawlessly on phones, tablets, and desktops—no exceptions.",
+    "maintenance_title": "Maintenance & Support",
+    "maintenance_desc": "Post-delivery technical support to keep your site secure, up-to-date, and running smoothly. We handle updates so you can focus on your business."
+  },
+  "cta_title": "Not Sure What You Need?",
+  "cta_desc": "Every project is unique. Let's discuss your goals and find the right solution for your business.",
+  "cta_button": "Get a Free Consultation"
+}

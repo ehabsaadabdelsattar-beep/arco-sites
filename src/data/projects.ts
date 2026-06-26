@@ -49,8 +49,7 @@ export const projects: Project[] = [
     challenges:
       "The primary design challenge was balancing visual richness with performance. Large, cinematic imagery needed to load instantly without compromising the premium feel. We implemented progressive image loading, lazy rendering, and a lightweight CSS animation layer to keep every interaction at 60fps.",
     technologies: ["React", "Framer Motion", "Vite", "Vanilla CSS", "Cloudinary"],
-    mockupDesktop:
-      "/projects_ui/park-regency-upload.png",
+    mockupDesktop: "/projects_ui/park-regency-upload.png",
     mockupMobile:
       "https://images.unsplash.com/photo-1551882547-ff40c0d5bf8f?q=80&w=800&auto=format&fit=crop",
     results: [
@@ -101,8 +100,7 @@ export const projects: Project[] = [
     challenges:
       "The hotel's existing content was scattered across multiple outdated pages with inconsistent imagery and messaging. We audited and restructured all content, developed a new photography-led visual hierarchy, and enforced a mobile-first breakpoint strategy to ensure flawless rendering on smaller screens.",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Performance Optimization"],
-    mockupDesktop:
-      "/projects_ui/naama-blue-upload.jpg",
+    mockupDesktop: "/projects_ui/naama-blue-upload.jpg",
     mockupMobile:
       "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=800&auto=format&fit=crop",
     results: [
@@ -150,8 +148,7 @@ export const projects: Project[] = [
     challenges:
       "The original website faced several challenges including an outdated visual design, inconsistent layout, limited mobile experience, and a slower user journey. It lacked modern hospitality-focused design elements, which reduced visual impact and guest engagement.",
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "SEO Optimization"],
-    mockupDesktop:
-      "/projects_ui/naama-inn-upload.png",
+    mockupDesktop: "/projects_ui/naama-inn-upload.png",
     mockupMobile:
       "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop",
     results: [
@@ -185,8 +182,7 @@ export const projects: Project[] = [
     showcaseVariant: "imac" as const,
     category: "Real Estate Development",
     year: "2025",
-    heroImage:
-      "/projects_ui/al-hisham-upload.png",
+    heroImage: "/projects_ui/al-hisham-upload.png",
     overview:
       "Al Hisham Development is a leading real estate firm specializing in luxury residential and commercial projects. They required a robust platform to showcase their portfolio of high-quality properties and sustainable real estate value.",
     clientGoals: [
@@ -200,10 +196,8 @@ export const projects: Project[] = [
     challenges:
       "Handling numerous high-resolution images and 3D renders without sacrificing website performance and load times.",
     technologies: ["React", "Next.js", "Tailwind CSS"],
-    mockupDesktop:
-      "/projects_ui/al-hisham-upload.png",
-    mockupMobile:
-      "/projects_ui/al-hisham-upload.png",
+    mockupDesktop: "/projects_ui/al-hisham-upload.png",
+    mockupMobile: "/projects_ui/al-hisham-upload.png",
     results: [
       "Double the lead generation rate",
       "Faster content delivery",
@@ -245,7 +239,8 @@ export const projects: Project[] = [
       "Balancing a luxury aesthetic with lightning-fast load times and a complex multilingual architecture.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
     mockupDesktop: "/projects_ui/royal_horizon.png",
-    mockupMobile: "https://images.unsplash.com/photo-1542314831-c6a4d27ce66b?q=80&w=800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1542314831-c6a4d27ce66b?q=80&w=800&auto=format&fit=crop",
     results: [
       "45% increase in direct bookings",
       "Performance score improved to 95/100",
@@ -283,7 +278,8 @@ export const projects: Project[] = [
       "Implementing an advanced shopping cart and secure payment gateway while maintaining a luxurious feel.",
     technologies: ["Next.js", "Tailwind CSS", "Stripe", "Framer Motion"],
     mockupDesktop: "/projects_ui/luna_jewelry.png",
-    mockupMobile: "https://images.unsplash.com/photo-1515562141207-7a8efbfc3473?q=80&w=800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1515562141207-7a8efbfc3473?q=80&w=800&auto=format&fit=crop",
     results: [
       "Increased conversion rate",
       "Enhanced user experience",
@@ -321,7 +317,8 @@ export const projects: Project[] = [
       "Handling a massive database of properties with advanced filtering logic without compromising frontend performance.",
     technologies: ["React", "Node.js", "PostgreSQL", "Mapbox"],
     mockupDesktop: "/projects_ui/elite_properties.png",
-    mockupMobile: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
     results: [
       "Faster property discovery",
       "Significant increase in viewing requests",
@@ -359,7 +356,8 @@ export const projects: Project[] = [
       "Creating a secure and compliant appointment scheduling system that syncs directly with the clinic's reception desk.",
     technologies: ["React", "Tailwind CSS", "Express", "PostgreSQL"],
     mockupDesktop: "/projects_ui/care_medical.png",
-    mockupMobile: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
     results: [
       "Streamlined patient booking process",
       "Reduced phone inquiries by 30%",
@@ -397,7 +395,8 @@ export const projects: Project[] = [
       "Designing a digital menu that is easy to navigate on mobile while still looking sophisticated and premium.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Supabase"],
     mockupDesktop: "/projects_ui/taste_house.png",
-    mockupMobile: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
     results: [
       "50% increase in online reservations",
       "Enhanced brand identity",
@@ -435,7 +434,8 @@ export const projects: Project[] = [
       "Developing a lightweight custom analytics dashboard that integrates with third-party tracking tools.",
     technologies: ["React", "Vite", "Framer Motion", "GSAP"],
     mockupDesktop: "/projects_ui/elevate_marketing.png",
-    mockupMobile: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
     results: [
       "Tripled incoming leads",
       "Established strong brand authority",
@@ -452,5 +452,53 @@ export const projects: Project[] = [
       "Vibrant gradient UI",
       "Lead generation forms",
     ],
-  }
+  },
+  {
+    id: "najeeb-salim-textiles",
+    title: "Najeeb Salim Textiles",
+    projectType: "new",
+    showcaseVariant: "imac" as const,
+    category: "Shopify Development & Customization",
+    year: "2025",
+    heroImage:
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2500&auto=format&fit=crop",
+    overview:
+      "Najeeb Salim is an Egyptian company specializing in the supply of fabrics, curtains, and home furnishings, with certified partnerships with global hotel chains such as Marriott, Hilton, Holiday Inn, Mövenpick, and Rixos. The goal of the e-commerce platform was to showcase products with precise categorization, an engaging customer service experience for multiple regions, and full bilingual support.",
+    clientGoals: [
+      "Display a large fabric catalog with multi-layered filtering (fabric type, curtain type, room usage)",
+      "Provide a fast and clear user experience",
+      "Full Arabic and English bilingual support with RTL",
+      "Showcase global hotel partnerships as a credibility element",
+      "Integrate installment and cash payment options",
+    ],
+    designProcess:
+      "We built and customized a Shopify store with a multi-layer categorization system. The design centers around trust — prominently displaying global hotel brand partnerships like Marriott and Hilton as social proof. A bilingual RTL-aware layout ensures an equally polished experience in both Arabic and English.",
+    challenges:
+      "The main challenge was building a catalog with multiple simultaneous filtering dimensions — fabric type, curtain type, and room — while maintaining a fast, intuitive user experience. RTL support required careful customization of both the Shopify theme and all custom sections.",
+    technologies: ["Shopify", "Liquid", "Custom Theme Development", "Google Maps API", "RTL Support"],
+    mockupDesktop:
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1800&auto=format&fit=crop",
+    mockupMobile:
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop",
+    results: [
+      "E-commerce platform ready for institutional-scale orders",
+      "High client trust through hotel partnership showcases",
+      "Seamless bilingual (Arabic/English) shopping experience",
+      "Interactive branch map linked to Google Maps by governorate",
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1800&auto=format&fit=crop",
+    ],
+    newUrl: "https://najeeb-salim.vercel.app/",
+    keyImprovements: [
+      "Multi-layer fabric categorization system",
+      "Full Arabic RTL support",
+      "Hotel partnership credibility section",
+      "Interactive branch map (Google Maps)",
+      "Installment & cash payment options",
+      "Customer photo review system",
+    ],
+  },
 ];

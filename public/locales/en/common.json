@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "start_project": "Start Project"
+  },
+  "footer": {
+    "tagline": "Premium web design and development for hotels and businesses.",
+    "location": "Beni Suef, Egypt",
+    "rights": "© {{year}} Arco Sites. All rights reserved.",
+    "links_title": "Quick Links"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  }
+}

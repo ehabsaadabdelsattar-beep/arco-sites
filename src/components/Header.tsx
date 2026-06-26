@@ -4,19 +4,24 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 import { Logo } from "./Logo";
+import { LangSwitcher } from "./LangSwitcher";
+import { useTranslation } from "react-i18next";
 
-const navLinks = [
-  { to: "/services", label: "Services" },
-  { to: "/portfolio", label: "Work" },
-  { to: "/pricing", label: "Pricing" },
-  { to: "/about", label: "About" },
-];
 
 export function Header() {
+  const { t } = useTranslation("common");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const routerState = useRouterState();
   const pathname = routerState.location.pathname;
+
+  const navLinks = [
+    { to: "/services", label: t("nav.services") },
+    { to: "/portfolio", label: t("nav.work") },
+    { to: "/pricing", label: t("nav.pricing") },
+    { to: "/about", label: t("nav.about") },
+  ];
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -65,6 +70,7 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 md:flex">
+          <LangSwitcher />
           <Link
             to="/contact"
             className="inline-flex h-9 items-center justify-center rounded-full px-5 text-sm font-medium transition-all duration-200 hover:opacity-90 active:scale-95"
@@ -73,7 +79,7 @@ export function Header() {
               color: "#ffffff",
             }}
           >
-            Start Project
+            {t("nav.start_project")}
           </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -132,6 +138,7 @@ export function Header() {
                 className="mt-8 flex flex-col gap-4 pt-8"
                 style={{ borderTop: "1px solid var(--nav-border)" }}
               >
+                <LangSwitcher />
                 <ThemeToggle />
                 <Link
                   to="/contact"
@@ -142,7 +149,7 @@ export function Header() {
                     color: "#ffffff",
                   }}
                 >
-                  Start Project
+                  {t("nav.start_project")}
                 </Link>
               </div>
             </div>

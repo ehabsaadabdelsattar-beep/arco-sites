@@ -42,7 +42,8 @@ function IMacMockup({ children }: { children: ReactNode }) {
           style={{
             background: "linear-gradient(145deg, #3a3a3c 0%, #1c1c1e 50%, #2c2c2e 100%)",
             padding: "10px 10px 6px 10px",
-            boxShadow: "0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.1)",
+            boxShadow:
+              "0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.1)",
           }}
         >
           {/* Top bezel with camera */}
@@ -171,13 +172,30 @@ function LaptopMockup({ children }: { children: ReactNode }) {
 }
 
 // ─── Scene Decorator Elements ────────────────────────────────────────────────
-function FloatingOrb({ x, y, size, color, opacity }: { x: string; y: string; size: string; color: string; opacity: number }) {
+function FloatingOrb({
+  x,
+  y,
+  size,
+  color,
+  opacity,
+}: {
+  x: string;
+  y: string;
+  size: string;
+  color: string;
+  opacity: number;
+}) {
   return (
     <div
       className="absolute rounded-full pointer-events-none"
       style={{
-        left: x, top: y, width: size, height: size,
-        background: color, opacity, filter: "blur(60px)",
+        left: x,
+        top: y,
+        width: size,
+        height: size,
+        background: color,
+        opacity,
+        filter: "blur(60px)",
       }}
     />
   );

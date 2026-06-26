@@ -1,0 +1,51 @@
+{
+  "meta_title": "تواصل معنا — Arco Sites",
+  "meta_description": "تواصل مع Arco Sites لمناقشة مشروعك القادم على الويب. استشارة مجانية متاحة.",
+  "hero_title": "تواصل معنا",
+  "hero_subtitle": "هل أنت مستعد للبدء في مشروعك؟ املأ النموذج أدناه وسنتواصل معك لتقديم استشارة مجانية.",
+  "info": {
+    "contact": "معلومات الاتصال",
+    "location": "بني سويف، مصر",
+    "consultation": "استشارة مجانية",
+    "consultation_desc": "حدد موعداً لمكالمة غير ملزمة لمناقشة احتياجات وأهداف مشروعك.",
+    "response": "وقت الاستجابة",
+    "response_desc": "عادةً ما نرد على جميع الاستفسارات خلال 24 ساعة في أيام العمل."
+  },
+  "form": {
+    "step1_title": "ما هو نوع هذا المشروع؟",
+    "step2_title": "ما هي الميزانية المقدرة؟",
+    "step3_title": "تفاصيل المشروع",
+    "step4_title": "معلومات الاتصال الخاصة بك",
+    "step_of": "الخطوة {{current}} من {{total}}",
+    "next": "متابعة",
+    "back": "رجوع",
+    "submit": "إرسال الطلب",
+    "submitting": "جارٍ الإرسال...",
+    "description_label": "الوصف",
+    "description_placeholder": "أخبرنا قليلاً عن أهدافك ومتطلباتك...",
+    "deadline_label": "الموعد النهائي المطلوب (اختياري)",
+    "deadline_placeholder": "مثال: شهر واحد، الربع الثالث، إلخ.",
+    "name_label": "الاسم الكامل",
+    "name_placeholder": "أحمد محمد",
+    "email_label": "البريد الإلكتروني",
+    "email_placeholder": "ahmed@example.com",
+    "phone_label": "رقم الهاتف",
+    "phone_placeholder": "+20 1xxxxxxxxx",
+    "success_title": "تم استلام الطلب!",
+    "success_desc": "شكراً لتواصلك معنا يا {{name}}. سنقوم بمراجعة تفاصيل مشروعك وسنرد عليك قريباً.",
+    "error_submit": "فشل في إرسال الطلب. يرجى المحاولة مرة أخرى."
+  },
+  "project_types": {
+    "hotel": "فندق",
+    "real_estate": "عقارات",
+    "restaurant": "مطعم",
+    "ecommerce": "متجر إلكتروني / تجارة إلكترونية",
+    "other": "أخرى"
+  },
+  "budgets": {
+    "landing": "صفحة هبوط ($999)",
+    "corporate": "موقع شركة ($2,499)",
+    "ecommerce": "متجر إلكتروني ($4,999+)",
+    "custom": "مخصص / غير متأكد"
+  }
+}

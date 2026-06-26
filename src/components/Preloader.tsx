@@ -26,7 +26,12 @@ export function Preloader() {
             <motion.img
               src="/arco-logo-white.png"
               alt="Arco Sites"
-              initial={{ clipPath: "inset(0 100% 0 0)", scale: 1.15, filter: "blur(12px)", opacity: 0 }}
+              initial={{
+                clipPath: "inset(0 100% 0 0)",
+                scale: 1.15,
+                filter: "blur(12px)",
+                opacity: 0,
+              }}
               animate={{ clipPath: "inset(0 0% 0 0)", scale: 1, filter: "blur(0px)", opacity: 1 }}
               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
               className="h-28 sm:h-32 w-auto block light:hidden"
@@ -35,7 +40,12 @@ export function Preloader() {
             <motion.img
               src="/arco-logo-purple.png"
               alt="Arco Sites"
-              initial={{ clipPath: "inset(0 100% 0 0)", scale: 1.15, filter: "blur(12px)", opacity: 0 }}
+              initial={{
+                clipPath: "inset(0 100% 0 0)",
+                scale: 1.15,
+                filter: "blur(12px)",
+                opacity: 0,
+              }}
               animate={{ clipPath: "inset(0 0% 0 0)", scale: 1, filter: "blur(0px)", opacity: 1 }}
               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
               className="h-28 sm:h-32 w-auto hidden light:block"
@@ -43,11 +53,11 @@ export function Preloader() {
           </div>
 
           {/* Elegant Progress Line */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="h-[2px] w-64 overflow-hidden rounded-full" 
+            className="h-[2px] w-64 overflow-hidden rounded-full"
             style={{ backgroundColor: "var(--border)" }}
           >
             <motion.div
