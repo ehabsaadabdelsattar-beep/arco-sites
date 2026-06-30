@@ -5,12 +5,11 @@ const STORAGE_KEY = "arco-theme";
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
-    // This runs on client only — safe for SSR because useState initializer
-    // is only called once client-side
-    if (typeof window === "undefined") return "dark";
-    const stored = localStorage.getItem(STORAGE_KEY) as Theme | null;
-    if (stored === "light" || stored === "dark") return stored;
-    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    // Read the actual current state of the DOM, which was already set by the flash-prevention script in __root.tsx
+    if (typeof document !== "undefined") {
+      return document.documentElement.classList.contains("light") ? "light" : "dark";
+    }
+    return "dark";
   });
 
   // Apply class to <html> whenever theme changes

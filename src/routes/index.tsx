@@ -1,8 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef, type ReactNode } from "react";
 import { LayoutTemplate, Zap, Smartphone, Search } from "lucide-react";
 import { projects } from "../data/projects";
 import { useTranslation } from "react-i18next";
+
+// ScrollReveal: binds animation directly to scroll position for buttery smooth reveal
+function ScrollReveal({ children, className }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 1.1", "start 0.25"],
+  });
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 80, damping: 22, mass: 0.5 });
+  const y = useTransform(smoothProgress, [0, 1], [120, 0]);
+  const opacity = useTransform(smoothProgress, [0, 0.35], [0, 1]);
+  const scale = useTransform(smoothProgress, [0, 1], [0.9, 1]);
+  return (
+    <motion.div ref={ref} style={{ y, opacity, scale }} className={className}>
+      {children}
+    </motion.div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -139,7 +158,7 @@ function HomePage() {
 
       {/* ── STATS ─────────────────────────────────────────── */}
       <section className="px-6 py-12 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-6xl">
+        <ScrollReveal className="mx-auto max-w-6xl">
           <div className="flex flex-col sm:flex-row justify-center gap-12 sm:gap-24 text-center divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: "var(--border)" }}>
             <div className="pt-6 sm:pt-0 sm:px-6 first:ps-0 flex flex-col gap-2">
               <span className="text-4xl font-bold" style={{ color: "var(--foreground)" }}>{t("stats.projects_value")}</span>
@@ -154,12 +173,12 @@ function HomePage() {
               <span className="text-sm tracking-wide uppercase font-medium" style={{ color: "var(--muted-foreground)" }}>{t("stats.response")}</span>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ── SERVICES ──────────────────────────────────────── */}
       <section className="px-6 py-32 sm:px-12 lg:px-24">
-        <div className="mx-auto max-w-6xl">
+        <ScrollReveal className="mx-auto max-w-6xl">
           <div className="mb-16 text-center">
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl" style={{ color: "var(--foreground)" }}>
               {t("services_title")}
@@ -178,12 +197,12 @@ function HomePage() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ── HOW WE WORK ───────────────────────────────────── */}
       <section className="px-6 py-32 sm:px-12 lg:px-24 border-t border-border/40">
-        <div className="mx-auto max-w-6xl">
+        <ScrollReveal className="mx-auto max-w-6xl">
           <div className="mb-16">
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl" style={{ color: "var(--foreground)" }}>
               {t("process_title")}
@@ -202,12 +221,12 @@ function HomePage() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ── SELECTED WORK ─────────────────────────────────── */}
       <section className="px-6 py-32 sm:px-12 lg:px-24 border-t border-border/40">
-        <div className="mx-auto max-w-7xl">
+        <ScrollReveal className="mx-auto max-w-7xl">
           <div className="mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl" style={{ color: "var(--foreground)" }}>
               {t("portfolio_title")}
@@ -242,12 +261,12 @@ function HomePage() {
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ── TESTIMONIALS ────────────────────────────────── */}
       <section className="px-6 py-32 sm:px-12 lg:px-24 border-t border-border/40">
-        <div className="mx-auto max-w-7xl text-center">
+        <ScrollReveal className="mx-auto max-w-7xl text-center">
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-16" style={{ color: "var(--foreground)" }}>
             {t("testimonials_title")}
           </h2>
@@ -266,12 +285,12 @@ function HomePage() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* ── CTA ───────────────────────────────────────────── */}
       <section className="px-6 py-40 text-center sm:px-12 lg:px-24 border-t border-border/40">
-        <div className="mx-auto max-w-2xl">
+        <ScrollReveal className="mx-auto max-w-2xl">
           <h2 className="mb-8 text-5xl font-bold leading-tight tracking-tight sm:text-6xl" style={{ color: "var(--foreground)" }}>
             {t("cta_title")}
           </h2>
@@ -282,7 +301,7 @@ function HomePage() {
           >
             {t("cta_button")}
           </Link>
-        </div>
+        </ScrollReveal>
       </section>
       </div>
     </div>

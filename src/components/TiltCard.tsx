@@ -15,11 +15,11 @@ export function TiltCard({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 15 });
-  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 15 });
+  const mouseXSpring = useSpring(x, { stiffness: 60, damping: 20, mass: 1.2 });
+  const mouseYSpring = useSpring(y, { stiffness: 60, damping: 20, mass: 1.2 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return;
